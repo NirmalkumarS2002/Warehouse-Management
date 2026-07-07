@@ -1,0 +1,192 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.header {
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+}
+
+.companylogo {
+    width: 180px;
+}
+
+.menulinks {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menulinks li {
+    list-style: none;
+}
+
+.menulinks li a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.mccontainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mblno {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.sidebar-contect {
+    display: none;
+}
+
+
+
+.header-sotial-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-sotial-links a {
+    font-size: 25px;
+    background: white;
+    width: 100%;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.nsicons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.mcbtn {
+    display: none;
+}
+
+.closebtn {
+    display: none;
+}
+
+.login-btn {
+    padding: 10px 30px;
+    font-size: 17px;
+    border-radius: 7px;
+    border: none;
+}
+
+@media (max-width:1180px) {
+
+    .header {
+        padding: 10px 10px;
+    }
+
+    .companylogo {
+        width: 150px;
+        z-index: 1;
+    }
+
+    .menubar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 80px 40px;
+        background: gray;
+        height: 100vh;
+        width: 320px;
+        transition: all .6s ease;
+        transform: translateX(-100%);
+    }
+    
+    .menubar.visible{
+        transform: translateX(0px);
+    }
+
+    .menu-btn {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .closebtn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .menulinks {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .mcbtn {
+        display: flex;
+        align-items: center;
+    }
+
+    .nsicons {
+        display: none;
+    }
+
+    .menubtn {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 5px;
+
+    }
+
+
+    .closebtn {
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .sidebar-contect {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sidebar-contect h2{
+        font-size: 23px;
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    .side-sotial-links {
+        display: flex;
+        gap: 10px;
+    }
+
+    .side-sotial-links a {
+        font-size: 25px;
+        background: white;
+        width: 100%;
+        border-radius: 50%;
+        padding: 3px;
+    }
+}
