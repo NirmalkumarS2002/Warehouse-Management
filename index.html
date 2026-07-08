@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-        
+
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -47,7 +47,7 @@
 
         position: relative;
         padding: 80px 15px;
-            font-family: "Noto Sans", sans-serif;
+        font-family: "Noto Sans", sans-serif;
     }
 
     .hero-text {
@@ -98,8 +98,8 @@
     }
 
     .h-outline {
-        background: rgba(255, 237, 188, 0.253);
-        color: black;
+        background: transparent;
+        color: white;
 
     }
 
@@ -202,6 +202,674 @@
             width: 80%;
         }
     }
+
+    /*added sections*/
+
+    :root {
+        --ink: #0C1116;
+        --panel: #131A22;
+        --panel2: #17202A;
+        --line: #263241;
+        --yellow: #F4C10F;
+        --orange: #FF5A2E;
+        --text: #ECEFF2;
+        --muted: #8FA0AC;
+        --display: 'Oswald', sans-serif;
+        --body: 'Inter', sans-serif;
+        --mono: 'Roboto Mono', monospace;
+    }
+
+    body {
+        background: var(--ink);
+        color: var(--text);
+        font-family: "Noto Sans", sans-serif;
+        line-height: 1.6;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    .wrap {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 30px;
+    }
+
+    .eyebrow {
+        font-family: var(--mono);
+        font-size: 13px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--yellow);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 2px;
+        background: var(--yellow);
+    }
+
+    h1,
+    h2,
+    h3 {
+
+
+        letter-spacing: .5px;
+        line-height: 1.1;
+        color: var(--text);
+    }
+
+    .hazard-strip {
+        height: 10px;
+        width: 100%;
+        background: repeating-linear-gradient(135deg, var(--yellow) 0 22px, #0C1116 22px 44px);
+    }
+
+    /* ============ SECTION 1 — HERO ============ */
+
+    .s1 {
+        padding: 90px 0 70px;
+        background: var(--ink);
+    }
+
+    .s1 .wrap {
+        display: grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .s1 h1 {
+        font-size: clamp(34px, 4.6vw, 58px);
+        margin-bottom: 22px;
+    }
+
+    .s1 h1 span {
+        color: var(--yellow);
+    }
+
+    .s1 p {
+        color: var(--muted);
+        font-size: 17px;
+        max-width: 480px;
+        margin-bottom: 34px;
+    }
+
+    .btn-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        font-family: var(--mono);
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 15px 28px;
+        border-radius: 3px;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border: 2px solid var(--yellow);
+        transition: .3s ease;
+    }
+
+    .btn-solid {
+        background: var(--yellow);
+        color: #10151A;
+        font-weight: 700;
+    }
+
+    .btn-solid:hover {
+        background: transparent;
+        color: var(--yellow);
+    }
+
+    .btn-ghost {
+        background: transparent;
+        color: var(--text);
+        border-color: var(--line);
+    }
+
+    .btn-ghost:hover {
+        border-color: var(--yellow);
+        color: var(--yellow);
+    }
+
+    .s1-img {
+        position: relative;
+    }
+
+    .s1-img .frame {
+        position: absolute;
+        inset: 18px -18px -18px 18px;
+        border: 2px solid var(--yellow);
+        z-index: 0;
+        border-radius: 4px;
+    }
+
+    .s1-img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .s1-tag {
+        position: absolute;
+        z-index: 2;
+        bottom: -20px;
+        left: -20px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--yellow);
+        padding: 14px 20px;
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--muted);
+    }
+
+    .s1-tag strong {
+        display: block;
+        color: var(--text);
+        font-size: 20px;
+        font-family: var(--display);
+    }
+
+    /* ============ SECTION 2 — STATS ============ */
+
+    .s2 {
+        background: var(--panel);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 50px 0;
+    }
+
+    .s2 .wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .stat {
+        text-align: center;
+        border-left: 1px solid var(--line);
+        padding: 0 10px;
+    }
+
+    .stat:first-child {
+        border-left: none;
+    }
+
+    .stat b {
+        font-family: var(--mono);
+        font-size: clamp(28px, 3.4vw, 42px);
+        color: var(--yellow);
+        display: block;
+    }
+
+    .stat span {
+        font-size: 13px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* ============ SECTION 3 — SERVICES ============ */
+
+    .s3 {
+        background: white;
+        padding: 100px 0;
+    }
+
+
+    .s3-head {
+        max-width: 620px;
+        margin-bottom: 55px;
+    }
+
+    .s3-head h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        margin-bottom: 14px;
+        color: black;
+    }
+
+    .s3-head p {
+          color: black;
+    }
+
+    .s3-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+    }
+
+    .s-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: .35s ease;
+    }
+
+    .s-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--yellow);
+    }
+
+    .s-card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+    }
+
+    .s-card-body {
+        padding: 24px;
+    }
+
+    .s-tag {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--yellow);
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .s-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .s-card p {
+        color: var(--muted);
+        font-size: 14.5px;
+    }
+
+    /* ============ SECTION 4 — ABOUT / WHY US ============ */
+
+    .s4 {
+        padding: 100px 0;
+        background: #000000;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+    }
+
+    .s4 .wrap {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .s4-img img {
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    .s4-text h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        margin-bottom: 18px;
+    }
+
+    .s4-text>p {
+        color: var(--muted);
+        margin-bottom: 30px;
+        max-width: 520px;
+    }
+
+    .check-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .check-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+    }
+
+    .check-mark {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        background: var(--yellow);
+        border-radius: 3px;
+        margin-top: 3px;
+        position: relative;
+    }
+
+    .check-mark::after {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid #10151A;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .check-item h4 {
+        font-family: var(--body);
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    .check-item p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* ============ SECTION 5 — PROCESS ============ */
+
+    .s5 {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .s5-head {
+        max-width: 620px;
+        margin-bottom: 60px;
+    }
+
+    .s5-head h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        margin-bottom: 14px;
+        color: black;
+    }
+
+    .s5-head p {
+        color: black;
+    }
+
+    .process-line {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        position: relative;
+    }
+
+    .process-line::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--line);
+    }
+
+    .p-step {
+        position: relative;
+        padding: 0 20px 0 0;
+    }
+
+    .p-num {
+        width: 46px;
+        height: 46px;
+        border: 2px solid var(--yellow);
+        background: var(--ink);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        color: var(--yellow);
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 22px;
+    }
+
+    .p-step h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: black;
+    }
+
+    .p-step p {
+          color: black;
+        font-size: 14px;
+        max-width: 240px;
+    }
+
+    /* ============ SECTION 6 — FACILITY GALLERY ============ */
+
+    .s6 {
+        padding: 100px 0;
+        background: black;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+    }
+
+    .s6-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 30px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+    }
+
+    .s6-head h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+    }
+
+    .s6-head p {
+        color: var(--muted);
+        max-width: 380px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr;
+        grid-template-rows: 220px 220px;
+        gap: 18px;
+    }
+
+    .g-item {
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .g-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: .5s ease;
+    }
+
+    .g-item:hover img {
+        transform: scale(1.08);
+    }
+
+    .g-item:first-child {
+        grid-row: span 2;
+    }
+
+    .g-cap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, .85), transparent);
+        padding: 16px;
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--yellow);
+    }
+
+    /* ============ SECTION 7 — TESTIMONIALS ============ */
+
+    .s7 {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .s7-head {
+        max-width: 620px;
+        margin-bottom: 50px;
+    }
+
+    .s7-head h2 {
+        font-size: clamp(28px, 3.4vw, 40px);
+        margin-bottom: 14px;
+        color: black;
+    }
+
+    .s7-head p {
+        color: var(--muted);
+    }
+
+    .t-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .t-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--yellow);
+        border-radius: 4px;
+        padding: 28px;
+    }
+
+    .t-card p {
+        color: var(--text);
+        font-size: 15px;
+        margin-bottom: 22px;
+    }
+
+    .t-who {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .t-who img {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .t-who b {
+        display: block;
+        font-size: 14px;
+    }
+
+    .t-who span {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--muted);
+    }
+
+    /* ============ SECTION 8 — CTA ============ */
+
+    .s8 {
+        padding: 110px 0;
+        background: black;
+        border-top: 1px solid var(--line);
+        text-align: center;
+    }
+
+    .s8 h2 {
+        font-size: clamp(30px, 5vw, 54px);
+        max-width: 800px;
+        margin: 0 auto 20px;
+    }
+
+    .s8 h2 span {
+        color: var(--yellow);
+    }
+
+    .s8 p {
+        color: var(--muted);
+        max-width: 520px;
+        margin: 0 auto 36px;
+    }
+
+    .s8 .btn-row {
+        justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+
+        .s1 .wrap,
+        .s4 .wrap {
+            grid-template-columns: 1fr;
+        }
+
+        .s2 .wrap {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .stat:nth-child(3) {
+            border-left: none;
+        }
+
+        .s3-grid,
+        .t-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .process-line {
+            grid-template-columns: 1fr;
+            gap: 34px;
+        }
+
+        .process-line::before {
+            display: none;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 180px 180px 180px;
+        }
+
+        .g-item:first-child {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+
+        .s6-head {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .s2 .wrap {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .g-item:first-child {
+            grid-column: span 1;
+        }
+    }
 </style>
 
 <body>
@@ -213,13 +881,13 @@
             <ul class="menulinks">
                 <li><a href="index.html" class="headlink active">Home</a></li>
                 <li><a href="about.html" class="headlink">About</a></li>
-                <li><a href="pages.html" class="headlink">Pages</a></li>
-                <li><a href="blog.html" class="headlink">blog</a></li>
+                <li><a href="pages.html" class="headlink">Blog</a></li>
+                <li><a href="service.html" class="headlink">service</a></li>
                 <li><a href="contact.html" class="headlink">Contact</a></li>
             </ul>
 
             <div class="menu-btn">
-                <a href="loginl.html"><button class="login-btn">Login</button></a>
+                <a href="login.html"><button class="login-btn">Login</button></a>
             </div>
 
             <div class="sidebar-contect">
@@ -319,6 +987,252 @@
         </div>
     </section>
 
+    <!-- ============ SECTION 1 — HERO ============ -->
+    <section class="s1">
+        <div class="wrap">
+            <div class="s1-text">
+                <span class="eyebrow">Warehouse Operations</span>
+                <h1>Precision Storage.<br>Zero <span>Downtime</span>.<br>Every Shipment.</h1>
+                <p>End-to-end warehouse management built for high-volume floors — inbound to dispatch, tracked and
+                    controlled at every stage.</p>
+                <div class="btn-row">
+                    <button class="btn btn-solid">Get A Quote</button>
+                    <button class="btn btn-ghost">View Facility</button>
+                </div>
+            </div>
+            <div class="s1-img">
+                <div class="frame"></div>
+                <img src="https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                    alt="Warehouse storage racks with pallets">
+                <div class="s1-tag"><strong>99.4%</strong>Order Accuracy Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="hazard-strip"></div>
+
+    <!-- ============ SECTION 2 — STATS BAR ============ -->
+    <section class="s2">
+        <div class="wrap">
+            <div class="stat"><b>240K+</b><span>Sq. Ft. Storage</span></div>
+            <div class="stat"><b>18</b><span>Active Facilities</span></div>
+            <div class="stat"><b>4.2M</b><span>Units Shipped / Yr</span></div>
+            <div class="stat"><b>24/7</b><span>Dock Operations</span></div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 3 — SERVICES ============ -->
+    <section class="s3">
+        <div class="wrap">
+            <div class="s3-head">
+                <span class="eyebrow">What We Handle</span>
+                <h2>Core Warehousing Services</h2>
+                <p>From the moment goods hit the dock to the second they leave for delivery, every step is tracked,
+                    staffed, and measured.</p>
+            </div>
+
+            <div class="s3-grid">
+                <div class="s-card">
+                    <img src="https://images.pexels.com/photos/5860937/pexels-photo-5860937.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Organized warehouse storage racks">
+                    <div class="s-card-body">
+                        <span class="s-tag">WH-01 / STORAGE</span>
+                        <h3>Inventory Storage</h3>
+                        <p>Rack, bin, and bulk storage systems configured around your SKU velocity and turnover.</p>
+                    </div>
+                </div>
+
+                <div class="s-card">
+                    <img src="https://images.pexels.com/photos/11666903/pexels-photo-11666903.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Forklift at warehouse loading dock">
+                    <div class="s-card-body">
+                        <span class="s-tag">WH-02 / DISPATCH</span>
+                        <h3>Order Fulfillment</h3>
+                        <p>Pick, pack, and dispatch workflows built to move volume without sacrificing accuracy.</p>
+                    </div>
+                </div>
+
+                <div class="s-card">
+                    <img src="https://images.pexels.com/photos/4487382/pexels-photo-4487382.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Worker operating pallet jack">
+                    <div class="s-card-body">
+                        <span class="s-tag">WH-03 / TRANSIT</span>
+                        <h3>Distribution &amp; Freight</h3>
+                        <p>Coordinated freight scheduling and last-mile handoffs across every route we serve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 4 — ABOUT / WHY US ============ -->
+    <section class="s4">
+        <div class="wrap">
+            <div class="s4-img">
+                <img src="https://images.pexels.com/photos/36696522/pexels-photo-36696522.jpeg?auto=compress&cs=tinysrgb&w=900"
+                    alt="Forklifts operating inside industrial warehouse">
+            </div>
+            <div class="s4-text">
+                <span class="eyebrow">Why Teams Choose Us</span>
+                <h2>Built For Floors That Can't Afford Errors</h2>
+                <p>Our systems are designed around one rule: nothing leaves the dock without being counted, scanned, and
+                    verified. That discipline is what keeps our partners running lean.</p>
+
+                <div class="check-list">
+                    <div class="check-item">
+                        <div class="check-mark"></div>
+                        <div>
+                            <h4>Real-Time Inventory Visibility</h4>
+                            <p>Stock counts synced across every location, updated live.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-mark"></div>
+                        <div>
+                            <h4>Trained Floor Crews</h4>
+                            <p>Certified handlers for pallet jacks, forklifts, and bulk racking.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <div class="check-mark"></div>
+                        <div>
+                            <h4>Damage &amp; Loss Control</h4>
+                            <p>Structured handling protocols that cut shrinkage across the board.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 5 — PROCESS ============ -->
+    <section class="s5">
+        <div class="wrap">
+            <div class="s5-head">
+                <span class="eyebrow">Manifest Flow</span>
+                <h2>How A Shipment Moves Through Us</h2>
+                <p>A fixed four-stage flow, the same for every pallet that enters the building.</p>
+            </div>
+
+            <div class="process-line">
+                <div class="p-step">
+                    <div class="p-num">01</div>
+                    <h3>Intake</h3>
+                    <p>Goods are received, scanned, and cross-checked against the purchase order.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">02</div>
+                    <h3>Storage</h3>
+                    <p>Items are slotted into racking based on velocity and expiry rules.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">03</div>
+                    <h3>Pick &amp; Pack</h3>
+                    <p>Orders are batched, picked, and packed against live inventory data.</p>
+                </div>
+                <div class="p-step">
+                    <div class="p-num">04</div>
+                    <h3>Dispatch</h3>
+                    <p>Loads are staged at the dock and released against the freight schedule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 6 — FACILITY GALLERY ============ -->
+    <section class="s6">
+        <div class="wrap">
+            <div class="s6-head">
+                <div>
+                    <span class="eyebrow">Inside The Floor</span>
+                    <h2>Our Facility</h2>
+                </div>
+                <p>A look at the aisles, docks, and crews that keep inventory moving every day.</p>
+            </div>
+
+            <div class="gallery">
+                <div class="g-item">
+                    <img src="https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg?auto=compress&cs=tinysrgb&w=900"
+                        alt="Stacked boxes in warehouse">
+                    <div class="g-cap">Bulk Storage Bay</div>
+                </div>
+                <div class="g-item">
+                    <img src="https://images.pexels.com/photos/7019213/pexels-photo-7019213.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Worker sorting items on shelves">
+                    <div class="g-cap">Sorting Line</div>
+                </div>
+                <div class="g-item">
+                    <img src="https://images.pexels.com/photos/30824313/pexels-photo-30824313.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Warehouse employees with forklift">
+                    <div class="g-cap">Floor Crew</div>
+                </div>
+                <div class="g-item">
+                    <img src="https://images.pexels.com/photos/14554082/pexels-photo-14554082.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Warehouse aisle with metal shelving">
+                    <div class="g-cap">Aisle Racking</div>
+                </div>
+                <div class="g-item">
+                    <img src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=700"
+                        alt="Wide angle of warehouse with stocked shelves">
+                    <div class="g-cap">Main Floor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 7 — TESTIMONIALS ============ -->
+    <section class="s7">
+        <div class="wrap">
+            <div class="s7-head">
+                <span class="eyebrow">Client Feedback</span>
+                <h2>What Partners Say About The Floor</h2>
+            </div>
+
+            <div class="t-grid">
+                <div class="t-card">
+                    <p>"Stock counts finally match what's actually on the shelf. That alone saved us hours every week."
+                    </p>
+                    <div class="t-who">
+                        <img src="https://images.pexels.com/photos/4483775/pexels-photo-4483775.jpeg?auto=compress&cs=tinysrgb&w=100"
+                            alt="Warehouse manager portrait">
+                        <div><b>R. Menon</b><span>Ops Manager, Retail Client</span></div>
+                    </div>
+                </div>
+
+                <div class="t-card">
+                    <p>"Dispatch times dropped by almost a third after they restructured our pick routes."</p>
+                    <div class="t-who">
+                        <img src="https://images.pexels.com/photos/4487365/pexels-photo-4487365.jpeg?auto=compress&cs=tinysrgb&w=100"
+                            alt="Logistics coordinator portrait">
+                        <div><b>S. Krishnan</b><span>Logistics Lead, FMCG Brand</span></div>
+                    </div>
+                </div>
+
+                <div class="t-card">
+                    <p>"Damage claims are down every quarter since we moved storage over to their facility."</p>
+                    <div class="t-who">
+                        <img src="https://images.pexels.com/photos/30341205/pexels-photo-30341205.jpeg?auto=compress&cs=tinysrgb&w=100"
+                            alt="Supply chain lead portrait">
+                        <div><b>A. Fernandes</b><span>Supply Chain Head, D2C Brand</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 8 — CTA ============ -->
+    <section class="s8">
+        <div class="wrap">
+            <span class="eyebrow" style="justify-content:center;">Start Today</span>
+            <h2>Ready To Move Your Inventory <span>The Right Way</span>?</h2>
+            <p>Talk to our operations team and get a facility walkthrough within 48 hours.</p>
+            <div class="btn-row">
+                <button class="btn btn-solid">Request A Quote</button>
+                <button class="btn btn-ghost">Contact Operations</button>
+            </div>
+        </div>
+    </section>
+
     <section class="footer">
 
         <div class="footer-top">
@@ -347,8 +1261,8 @@
                 <div class="footer-links">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                    <a href="pages.html">Pages</a>
-                    <a href="blog.html">Blog</a>
+                    <a href="pages.html">blog</a>
+                    <a href="service.html">service</a>
                     <a href="contact.html">Contact</a>
                 </div>
 

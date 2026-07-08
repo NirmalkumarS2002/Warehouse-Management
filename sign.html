@@ -31,13 +31,16 @@
         font-family: "Noto Sans", sans-serif;
     }
 
+    :root{
+              --pcolor: #FFB334;
+    }
     body {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100%;
         min-height: 100vh;
-        background: gray;
+        background: white;
     }
 
     .signpage {
@@ -52,14 +55,17 @@
     }
 
     .left {
-        background: red;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         position: relative;
         padding: 15px;
-    }
+         background: linear-gradient(123deg, rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.418)), url("./src/l1.webp");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
 
     .signlogo {
         position: absolute;
@@ -71,6 +77,7 @@
     .left h1 {
         font-size: clamp(30px, 4vw, 45px);
         margin-bottom: 10px;
+        color: var(--pcolor);
     }
 
     .left p {
@@ -78,13 +85,14 @@
         max-width: 400px;
         text-align: center;
         line-height: 1.5;
+        color: white;
     }
 
     .right {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: blue;
+        background: black;
         width: 100%;
         padding: 40px;
     }
@@ -93,11 +101,16 @@
         font-size: 30px;
         margin-bottom: 20px;
         text-align: center;
+        color: var(--pcolor);
     }
 
     .inputbox {
         position: relative;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .inputbox span{
+        color: var(--pcolor);
     }
 
     .inputbox input,
@@ -107,14 +120,27 @@
         border-radius: 5px;
         font-size: 13px;
         border: 1px solid var(--pcolor);
+        background: transparent;
+        color:white;
     }
+
+            .inputbox input:focus {
+            outline: none;
+            box-shadow: 1px 1px 15px #ffb53496;
+            background: transparent
+        }
+
+        .inputbox select:hover {
+            outline: none;
+              box-shadow: 1px 1px 15px #ffb53496;
+        }
 
     .ic1 {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         font-size: 20px;
-        left: 5px;
+        left: 10px;
     }
 
     .ic2 {
@@ -122,7 +148,7 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 20px;
-        left: 5px;
+        left: 10px;
     }
 
     .ic3 {
@@ -130,7 +156,7 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 20px;
-        right: 5px;
+        right: 10px;
     }
 
     .submitbtn {
@@ -141,6 +167,13 @@
         border: none;
         font-weight: bold;
         margin-bottom: 20px;
+        background: var(--pcolor);
+        transition: .6s ease;
+    }
+
+    .submitbtn:hover{
+              transform: translateY(-4px);
+            box-shadow: 1px 1px 20px var(--pcolor);
     }
 
     .signfooter {
@@ -160,6 +193,11 @@
         text-decoration: none;
         font-size: 13px;
         color: white;
+    }
+
+      .signfooter div a:hover,
+    .signfooter a:hover{
+        color: var(--pcolor);
     }
 
     @media (max-width:760px) {

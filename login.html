@@ -62,9 +62,9 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            padding: 10px;
+            padding: 20px;
             position: relative;
-            background: linear-gradient(123deg, rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.788)), url("./src/l1.webp");
+            background: linear-gradient(123deg, rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.418)), url("./src/l1.webp");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -79,7 +79,7 @@
         }
 
         .or {
-            color: black;
+            color: white;
             font-size: 12px;
             position: relative;
         }
@@ -90,7 +90,7 @@
             width: 100px;
             height: 1px;
             top: 50%;
-            background: black;
+            background: white;
             position: absolute;
         }
 
@@ -113,6 +113,11 @@
         .googleicons a {
             font-size: 25px;
             color: var(--pcolor);
+            transition: .6s ease;
+        }
+
+        .googleicons a:hover{
+            transform: scale(1.3);
         }
 
         .right h1 {
@@ -138,7 +143,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: white;
+            background: black;
             padding: 40px;
             width: 100%;
         }
@@ -164,10 +169,19 @@
             border-radius: 5px;
             font-size: 13px;
             border: 1px solid var(--pcolor);
+            background: transparent;
+            color: white;
         }
 
         .inputbox input:focus {
             outline: none;
+             box-shadow: 1px 1px 15px #ffb53496;
+            background: transparent
+        }
+
+        .inputbox select:hover {
+            outline: none;
+             box-shadow: 1px 1px 15px #ffb53496;
         }
 
         .mail {
@@ -176,6 +190,7 @@
             left: 5px;
             font-size: 20px;
             transform: translateY(-50%);
+            color: var(--pcolor);
         }
 
         .pass1 {
@@ -184,6 +199,7 @@
             left: 5px;
             font-size: 20px;
             transform: translateY(-50%);
+              color: var(--pcolor);
         }
 
         .pass2 {
@@ -192,12 +208,14 @@
             right: 10px;
             font-size: 20px;
             transform: translateY(-50%);
+              color: var(--pcolor);
         }
 
         .forget {
             width: 100%;
             display: flex;
             justify-content: flex-end;
+            font-weight: bold;
         }
 
         .forget a {
@@ -217,7 +235,13 @@
             font-size: 13px;
             font-weight: bold;
             background: var(--pcolor);
+            transition: .6s ease;
         }
+
+          .loginbtn:hover{
+            transform: translateY(-4px);
+            box-shadow: 1px 1px 20px var(--pcolor);
+          }
 
         .loginfooter div {
             display: flex;
@@ -232,7 +256,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: black;
+            color: white;
             gap: 5px;
             font-size: 12px;
         }
@@ -248,7 +272,7 @@
 
         .loginfooter div p,
         .loginfooter div a {
-            color: black;
+            color: white;
             font-size: 12px;
             text-decoration: none;
         }

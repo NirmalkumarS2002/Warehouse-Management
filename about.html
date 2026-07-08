@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse - About</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oldenburg&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+        
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    :root {
+        --pcolor: #FFB334;
+        --scolor: white;
+    }
+
+    /* ============ ABOUT BANNER ============ */
+    .about-banner {
+        width: 100%;
+        min-height: 60vh;
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)),
+            url("https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=80");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+        padding: 120px 15px 60px;
+    }
+
+    .about-banner span {
+        color: var(--pcolor);
+        font-size: 15px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .about-banner h1 {
+        color: white;
+        font-size: clamp(28px, 4vw, 48px);
+        max-width: 750px;
+    }
+
+    .about-banner p {
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        font-size: clamp(14px, 1.6vw, 17px);
+        line-height: 1.7;
+    }
+
+    .breadcrumb {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 15px;
+    }
+
+    .breadcrumb a {
+        color: var(--pcolor);
+        text-decoration: none;
+    }
+
+    /* ============ SHARED SECTION STYLES ============ */
+    section {
+        width: 100%;
+        padding: 80px 20px;
+    }
+
+    .section-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 50px;
+    }
+
+    .section-head span {
+        color: var(--pcolor);
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .section-head h2 {
+        font-size: clamp(24px, 3vw, 38px);
+        color: #111;
+        max-width: 650px;
+    }
+
+    .section-head p {
+        max-width: 600px;
+        color: #555;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* ============ OUR STORY ============ */
+    .story-section {
+        background: #fff;
+    }
+
+    .story-wrap {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .story-images {
+        flex: 1;
+        min-width: 300px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .story-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .story-images img:first-child {
+        grid-row: span 2;
+        height: 100%;
+    }
+
+    .story-content {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .story-content span {
+        color: var(--pcolor);
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .story-content h2 {
+        font-size: clamp(24px, 3vw, 34px);
+        color: #111;
+    }
+
+    .story-content p {
+        color: #555;
+        line-height: 1.8;
+        font-size: 15px;
+    }
+
+    .story-points {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .story-points li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #333;
+        font-size: 15px;
+    }
+
+    .story-points li i {
+        color: black;
+        background: var(--pcolor);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    /* ============ MISSION & VISION ============ */
+    .mv-section {
+        background: #f7f7f7;
+    }
+
+    .mv-wrap {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .mv-card {
+        flex: 1;
+        min-width: 280px;
+        max-width: 400px;
+        background: white;
+        border-radius: 10px;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+        transition: .4s ease;
+    }
+
+    .mv-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .mv-card .icon-box {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: var(--pcolor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mv-card .icon-box span {
+        font-size: 30px;
+        color: black;
+    }
+
+    .mv-card h3 {
+        font-size: 20px;
+        color: #111;
+    }
+
+    .mv-card p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    /* ============ WHY CHOOSE US ============ */
+    .why-section {
+        background: black;
+    }
+
+    .why-section .section-head h2 {
+        color: white;
+    }
+
+    .why-section .section-head p {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .why-wrap {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    .why-card {
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        padding: 30px 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        transition: .4s ease;
+    }
+
+    .why-card:hover {
+        border-color: var(--pcolor);
+        transform: translateY(-8px);
+    }
+
+    .why-card span.material-symbols-outlined {
+        font-size: 38px;
+        color: var(--pcolor);
+    }
+
+    .why-card h3 {
+        color: white;
+        font-size: 18px;
+    }
+
+    .why-card p {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    /* ============ STATS / COUNTERS ============ */
+    .stats-section {
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.75)),
+            url("https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=1600&q=80");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .stats-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        text-align: center;
+    }
+
+    .stat-box h2 {
+        color: var(--pcolor);
+        font-size: clamp(30px, 4vw, 46px);
+    }
+
+    .stat-box p {
+        color: white;
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin-top: 8px;
+    }
+
+    /* ============ PROCESS / HOW WE WORK ============ */
+    .process-section {
+        background: white;
+    }
+
+    .process-wrap {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        position: relative;
+    }
+
+    .process-card {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+    }
+
+    .process-number {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 2px solid var(--pcolor);
+        color: var(--pcolor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .process-card h3 {
+        font-size: 18px;
+        color: #111;
+    }
+
+    .process-card p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+        .story-wrap {
+            flex-direction: column-reverse;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+      <header class="header">
+        <a href="index.html" class="companylogoa"><img src="./src/logo.webp" alt="Company Logo" class="companylogo"></a>
+
+        <div class="menubar">
+            <ul class="menulinks">
+                <li><a href="index.html" class="headlink">Home</a></li>
+                <li><a href="about.html" class="headlink active">About</a></li>
+                <li><a href="pages.html" class="headlink">Blog</a></li>
+                <li><a href="service.html" class="headlink">service</a></li>
+                <li><a href="contact.html" class="headlink">Contact</a></li>
+            </ul>
+
+            <div class="menu-btn">
+                <a href="login.html"><button class="login-btn">Login</button></a>
+            </div>
+
+            <div class="sidebar-contect">
+                <h2>Contect us</h2>
+                <div class="side-sotial-links">
+                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <span class="material-symbols-outlined closebtn">
+                close
+            </span>
+
+        </div>
+
+
+        <div class="nsicons">
+            <div class="mccontainer">
+                <a href="404.html" class="mblno">+91 12345 67890</a>
+            </div>
+
+            <div class="header-sotial-links">
+                <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+
+            <div class="loginwraper">
+                <a href="login.html"><button class="login-btn">Login</button></a>
+            </div>
+        </div>
+
+
+
+        <div class="mcbtn">
+            <span class="material-symbols-outlined menubtn">
+                menu
+            </span>
+        </div>
+    </header>
+
+    <!-- ================= ABOUT BANNER ================= -->
+    <section class="about-banner">
+        <span>About Us</span>
+        <h1>Building Smarter Warehouse Solutions For Your Business</h1>
+        <p>Unlocking efficiency, safety, and reliability with a trusted partner in material handling and
+            inventory excellence.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <p>About</p>
+        </div>
+    </section>
+
+    <!-- ================= 1. OUR STORY ================= -->
+    <section class="story-section">
+        <div class="story-wrap">
+            <div class="story-images">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+                    alt="Warehouse shelves">
+                <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=500&q=80"
+                    alt="Warehouse worker">
+                <img src="https://images.unsplash.com/photo-1601599963565-b7f49deb1f30?auto=format&fit=crop&w=500&q=80"
+                    alt="Logistics team">
+            </div>
+
+            <div class="story-content">
+                <span>Our Story</span>
+                <h2>Years Of Experience In Warehouse Management</h2>
+                <p>What started as a small storage facility has grown into a full-scale warehouse management
+                    company trusted by businesses across the region. Over the years, we have combined modern
+                    technology with hands-on expertise to simplify inventory, storage, and distribution for our
+                    clients.</p>
+                <p>Our team works closely with every client to build systems that are safe, scalable, and
+                    dependable, no matter the size of the operation.</p>
+
+                <ul class="story-points">
+                    <li><i class="fa-solid fa-check"></i>Trusted by 200+ businesses nationwide</li>
+                    <li><i class="fa-solid fa-check"></i>Modern inventory tracking systems</li>
+                    <li><i class="fa-solid fa-check"></i>Dedicated support around the clock</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2. MISSION & VISION ================= -->
+    <section class="mv-section">
+        <div class="section-head">
+            <span>What Drives Us</span>
+            <h2>Our Mission And Vision</h2>
+            <p>Guided by clear goals, we aim to redefine how businesses manage their storage and
+                distribution operations.</p>
+        </div>
+
+        <div class="mv-wrap">
+            <div class="mv-card">
+                <div class="icon-box"><span class="material-symbols-outlined">flag</span></div>
+                <h3>Our Mission</h3>
+                <p>To deliver reliable, efficient, and technology-driven warehouse solutions that help
+                    businesses grow without operational bottlenecks.</p>
+            </div>
+
+            <div class="mv-card">
+                <div class="icon-box"><span class="material-symbols-outlined">visibility</span></div>
+                <h3>Our Vision</h3>
+                <p>To become the most trusted warehouse management partner known for innovation, safety, and
+                    long-term client relationships.</p>
+            </div>
+
+            <div class="mv-card">
+                <div class="icon-box"><span class="material-symbols-outlined">diversity_3</span></div>
+                <h3>Our Values</h3>
+                <p>Integrity, precision, and accountability guide every process, from receiving stock to
+                    final delivery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. WHY CHOOSE US ================= -->
+    <section class="why-section">
+        <div class="section-head">
+            <span>Why Choose Us</span>
+            <h2>What Makes Us The Right Partner</h2>
+            <p>We combine skilled teams, modern infrastructure, and proven processes to keep your operations
+                running smoothly.</p>
+        </div>
+
+        <div class="why-wrap">
+            <div class="why-card">
+                <span class="material-symbols-outlined">warehouse</span>
+                <h3>Secure Storage</h3>
+                <p>Climate-controlled and monitored facilities designed to protect your inventory at every
+                    stage.</p>
+            </div>
+
+            <div class="why-card">
+                <span class="material-symbols-outlined">delivery_truck_speed</span>
+                <h3>Fast Distribution</h3>
+                <p>Optimized routing and dispatch systems that keep your deliveries on schedule.</p>
+            </div>
+
+            <div class="why-card">
+                <span class="material-symbols-outlined">inventory_2</span>
+                <h3>Smart Inventory</h3>
+                <p>Real-time tracking tools that give you complete visibility of your stock at all times.</p>
+            </div>
+
+            <div class="why-card">
+                <span class="material-symbols-outlined">support_agent</span>
+                <h3>24/7 Support</h3>
+                <p>A dedicated team ready to assist with any operational need, day or night.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. STATS ================= -->
+    <section class="stats-section">
+        <div class="stats-wrap">
+            <div class="stat-box">
+                <h2>12+</h2>
+                <p>Years Of Experience</p>
+            </div>
+            <div class="stat-box">
+                <h2>200+</h2>
+                <p>Clients Served</p>
+            </div>
+            <div class="stat-box">
+                <h2>50+</h2>
+                <p>Warehouse Facilities</p>
+            </div>
+            <div class="stat-box">
+                <h2>99%</h2>
+                <p>On-Time Delivery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 5. OUR PROCESS ================= -->
+    <section class="process-section">
+        <div class="section-head">
+            <span>How We Work</span>
+            <h2>Our Simple Warehouse Process</h2>
+            <p>A streamlined process that ensures your goods are handled with care from arrival to final
+                delivery.</p>
+        </div>
+
+        <div class="process-wrap">
+            <div class="process-card">
+                <div class="process-number">01</div>
+                <h3>Receiving</h3>
+                <p>Goods are received, inspected, and logged into our tracking system.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">02</div>
+                <h3>Storage</h3>
+                <p>Inventory is organized and stored securely based on category and demand.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">03</div>
+                <h3>Order Processing</h3>
+                <p>Orders are picked and packed accurately using verified checklists.</p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">04</div>
+                <h3>Distribution</h3>
+                <p>Packages are dispatched and delivered on time through optimized routes.</p>
+            </div>
+        </div>
+    </section>
+
+     <footer class="footer">
+
+        <div class="footer-top">
+            <div class="footer1">
+
+                <a href="index.html"> <img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
+                <p>Streamline inventory, storage, and distribution with smart
+                    warehouse management solutions.</p>
+
+                <div class="subscirbe-box">
+                    <input type="email" id="footer-email" placeholder="Please Subscribe">
+                    <button class="subscribe-btn">Suscribe</button>
+                </div>
+
+                <div class="footer-sotial-links">
+                    <a href="404.html"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer2">
+                <h2>Company</h2>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="pages.html">Blog</a>
+                    <a href="service.html">service</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+            </div>
+
+            <div class="footer2">
+                <h2>Services</h2>
+
+                <div class="footer-links">
+                    <a href="404.html">Inventory</a>
+                    <a href="404.html">Order</a>
+                    <a href="404.html">Storage</a>
+                    <a href="404.html">Package</a>
+                    <a href="404.html">Distribution</a>
+                </div>
+            </div>
+
+            <div class="footer2 f-contects">
+                <h2>Location</h2>
+
+                <div class="footer-links">
+                    <a href="404.html"><span class="material-symbols-outlined">call</span>+91 12345 09876</a>
+                    <a href="404.html"><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
+                    <a href="404.html"><span class="material-symbols-outlined">location_on</span>Chennai,Tamilnadu</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>@Copyright 2026 Created by Stackly</p>
+            <div>
+                <a href="404.html">Terms and conditions</a>
+                <a href="404.html">Privacy Policy</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
