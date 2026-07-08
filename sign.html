@@ -31,9 +31,10 @@
         font-family: "Noto Sans", sans-serif;
     }
 
-    :root{
-              --pcolor: #FFB334;
+    :root {
+        --pcolor: #FFB334;
     }
+
     body {
         display: flex;
         align-items: center;
@@ -61,11 +62,11 @@
         flex-direction: column;
         position: relative;
         padding: 15px;
-         background: linear-gradient(123deg, rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.418)), url("./src/l1.webp");
+        background: linear-gradient(123deg, rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.418)), url("./src/l1.webp");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        }
+    }
 
     .signlogo {
         position: absolute;
@@ -109,7 +110,7 @@
         margin-bottom: 15px;
     }
 
-    .inputbox span{
+    .inputbox span {
         color: var(--pcolor);
     }
 
@@ -121,19 +122,19 @@
         font-size: 13px;
         border: 1px solid var(--pcolor);
         background: transparent;
-        color:white;
+        color: white;
     }
 
-            .inputbox input:focus {
-            outline: none;
-            box-shadow: 1px 1px 15px #ffb53496;
-            background: transparent
-        }
+    .inputbox input:focus {
+        outline: none;
+        box-shadow: 1px 1px 15px #ffb53496;
+        background: transparent
+    }
 
-        .inputbox select:hover {
-            outline: none;
-              box-shadow: 1px 1px 15px #ffb53496;
-        }
+    .inputbox select:hover {
+        outline: none;
+        box-shadow: 1px 1px 15px #ffb53496;
+    }
 
     .ic1 {
         position: absolute;
@@ -171,9 +172,9 @@
         transition: .6s ease;
     }
 
-    .submitbtn:hover{
-              transform: translateY(-4px);
-            box-shadow: 1px 1px 20px var(--pcolor);
+    .submitbtn:hover {
+        transform: translateY(-4px);
+        box-shadow: 1px 1px 20px var(--pcolor);
     }
 
     .signfooter {
@@ -195,10 +196,88 @@
         color: white;
     }
 
-      .signfooter div a:hover,
-    .signfooter a:hover{
+    .signfooter div a:hover,
+    .signfooter a:hover {
         color: var(--pcolor);
     }
+
+    /**/
+
+    .custom-select {
+        position: relative;
+        width: 100%;
+    }
+
+    .select-btn {
+        width: 100%;
+        height: 44px;
+        border: 1px solid #ffb334;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 5px;
+        color: #fff;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .select-btn .arrow {
+        margin-left: auto;
+        transition: .3s;
+    }
+
+    .select-btn.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .selected-text {
+        color: #ffffff !important;
+        font-size: 14px;
+    }
+
+    .select-options {
+        position: absolute;
+        width: 100%;
+        top: 58px;
+        left: 0px;
+        background: #111;
+        border: 1px solid #ffb334;
+        border-radius: 8px;
+        overflow: hidden;
+        display: none;
+        z-index: 100;
+    }
+
+    .select-options.show {
+        display: block;
+    }
+
+    .option {
+        padding: 14px 15px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .option:hover {
+        background: #ffb334;
+        color: black;
+    }
+
+    .option .material-symbols-outlined,
+    .select-btn .material-symbols-outlined {
+        color: #ffb334;
+        font-size: 21px;
+    }
+
+    .option:hover .material-symbols-outlined {
+        color: black;
+    }
+
 
     @media (max-width:760px) {
 
@@ -231,12 +310,28 @@
             <form class="formbox">
 
                 <div class="inputbox">
-                    <span class="material-symbols-outlined ic1">person</span>
-                    <select id="role">
-                        <option value="">select role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Client">Client</option>
-                    </select>
+                    
+                    <div class="custom-select">
+                        <div class="select-btn">
+                            <span class="material-symbols-outlined">person</span>
+                            <span class="selected-text">Select Role</span>
+                            <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
+                        </div>
+
+                        <div class="select-options">
+                            <div class="option" data-value="Admin">
+
+                                Admin
+                            </div>
+
+                            <div class="option" data-value="Client">
+
+                                Client
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="role" name="role">
+                    </div>
                 </div>
 
                 <div class="inputbox">
@@ -283,6 +378,38 @@
         </div>
 
     </section>
+
+    <script>
+
+        const selectBtn = document.querySelector(".select-btn");
+        const options = document.querySelector(".select-options");
+        const selectedText = document.querySelector(".selected-text");
+        const roleInput = document.querySelector("#role");
+
+        selectBtn.addEventListener("click", () => {
+            options.classList.toggle("show");
+            selectBtn.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".option").forEach(option => {
+            option.addEventListener("click", () => {
+                selectedText.textContent = option.textContent.trim();
+                selectedText.style.color = "white";
+
+                roleInput.value = option.dataset.value;
+
+                options.classList.remove("show");
+                selectBtn.classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".custom-select")) {
+                options.classList.remove("show");
+                selectBtn.classList.remove("active");
+            }
+        }); 
+    </script>
 </body>
 
 </html>

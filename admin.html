@@ -238,23 +238,17 @@
 
         /* reused button style (matches .page-btn) */
         .d-btn {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 10px 20px;
-            gap: 10px;
             background: var(--pcolor);
             border: 1px solid var(--pcolor);
             border-radius: 10px;
             color: white;
-            overflow: hidden;
             cursor: pointer;
             transition: .8s ease;
-            z-index: 1;
             font-size: 13px;
             font-weight: bold;
             font-family: "Noto Sans", sans-serif;
+            text-wrap: nowrap;
         }
 
 
@@ -691,193 +685,232 @@
         </div>
 
         <!-- ========== 1. OVERVIEW VIEW ========== -->
-        <div class="view active" id="overview">
-            <div class="stat-row">
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">inventory_2</span></div>
-                    <h2>1,284</h2>
-                    <p>Total Shipments</p>
-                    <span class="delta">+12.4% this month</span>
-                </div>
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">local_shipping</span></div>
-                    <h2>326</h2>
-                    <p>In Transit</p>
-                    <span class="delta">+4.1% this month</span>
-                </div>
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">task_alt</span></div>
-                    <h2>892</h2>
-                    <p>Delivered</p>
-                    <span class="delta">+9.8% this month</span>
-                </div>
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">payments</span></div>
-                    <h2>$482K</h2>
-                    <p>Revenue (MTD)</p>
-                    <span class="delta down">-2.3% this month</span>
-                </div>
-            </div>
-
-            <div class="split-2">
-                <div class="panel">
-                    <div class="panel-head">
-                        <h3>Recent Shipments</h3>
-                        <button class="d-btn errorpage">View All </button>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Shipment</th>
-                                <th>Route</th>
-                                <th>Mode</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="cell-item"><img src="./src/21.webp">#STK-2291
-                                </td>
-                                <td>New York → Miami</td>
-                                <td>Land</td>
-                                <td><span class="badge transit">In Transit</span></td>
-                            </tr>
-                            <tr>
-                                <td class="cell-item"><img src="./src/7.webp">#STK-2288
-                                </td>
-                                <td>Shanghai → LA</td>
-                                <td>Sea</td>
-                                <td><span class="badge delivered">Delivered</span></td>
-                            </tr>
-                            <tr>
-                                <td class="cell-item"><img src="./src/13.webp">#STK-2285
-                                </td>
-                                <td>Dubai → London</td>
-                                <td>Air</td>
-                                <td><span class="badge pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td class="cell-item"><img src="./src/12.webp">#STK-2280
-                                </td>
-                                <td>Chicago → Dallas</td>
-                                <td>Land</td>
-                                <td><span class="badge delivered">Delivered</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="panel">
-                    <h3>Fleet Status</h3>
-                    <img src="./src/loginbg.webp"
-                        style="width:100%;height:150px;object-fit:cover;border-radius:14px;margin-bottom:16px;"
-                        alt="Warehouse floor">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>Trucks Active</td>
-                                <td style="text-align:right;font-weight:600;">42 / 50</td>
-                            </tr>
-                            <tr>
-                                <td>Ships at Port</td>
-                                <td style="text-align:right;font-weight:600;">6 / 8</td>
-                            </tr>
-                            <tr>
-                                <td>Planes Scheduled</td>
-                                <td style="text-align:right;font-weight:600;">3 / 4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+       <div class="view active" id="overview">
+    <div class="stat-row">
+        <div class="stat-card">
+            <div class="top"><span class="material-symbols-outlined">inventory_2</span></div>
+            <h2>8,542</h2>
+            <p>Total Inventory Items</p>
+            <span class="delta">+15.2% this month</span>
         </div>
+
+        <div class="stat-card">
+            <div class="top"><span class="material-symbols-outlined">warehouse</span></div>
+            <h2>12</h2>
+            <p>Active Warehouses</p>
+            <span class="delta">+2 new locations</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="top"><span class="material-symbols-outlined">local_shipping</span></div>
+            <h2>356</h2>
+            <p>Orders Ready to Dispatch</p>
+            <span class="delta">+8.7% this week</span>
+        </div>
+
+        <div class="stat-card">
+            <div class="top"><span class="material-symbols-outlined">payments</span></div>
+            <h2>$1.24M</h2>
+            <p>Warehouse Revenue</p>
+            <span class="delta">+11.4% this month</span>
+        </div>
+    </div>
+
+    <div class="split-2">
+        <div class="panel">
+            <div class="panel-head">
+                <h3>Recent Warehouse Activities</h3>
+                <button class="d-btn errorpage">View All</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Reference</th>
+                        <th>Section</th>
+                        <th>Operation</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="cell-item">
+                            #WH-4521
+                        </td>
+                        <td>Zone A - Electronics</td>
+                        <td>Stock Received</td>
+                        <td><span class="badge delivered">Completed</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-item">
+                
+                            #WH-4518
+                        </td>
+                        <td>Zone C - Furniture</td>
+                        <td>Order Picking</td>
+                        <td><span class="badge transit">In Progress</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-item">
+                     
+                            #WH-4514
+                        </td>
+                        <td>Zone B - Apparel</td>
+                        <td>Quality Inspection</td>
+                        <td><span class="badge pending">Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td class="cell-item">
+              
+                            #WH-4509
+                        </td>
+                        <td>Zone D - Food Storage</td>
+                        <td>Shipment Dispatch</td>
+                        <td><span class="badge delivered">Completed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="panel">
+            <h3>Warehouse Capacity Status</h3>
+
+           
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Storage Utilization</td>
+                        <td style="text-align:right;font-weight:600;">78%</td>
+                    </tr>
+
+                    <tr>
+                        <td>Available Pallet Spaces</td>
+                        <td style="text-align:right;font-weight:600;">1,248</td>
+                    </tr>
+
+                    <tr>
+                        <td>Forklifts Active</td>
+                        <td style="text-align:right;font-weight:600;">18 / 22</td>
+                    </tr>
+
+                    <tr>
+                        <td>Warehouse Staff On Duty</td>
+                        <td style="text-align:right;font-weight:600;">64 / 72</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
         <!-- ========== 2. SHIPMENTS VIEW ========== -->
-        <div class="view" id="shipments">
-            <div class="stat-row">
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">flight</span></div>
-                    <h2>184</h2>
-                    <p>Air Shipments</p>
-                </div>
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">directions_boat</span></div>
-                    <h2>312</h2>
-                    <p>Sea Shipments</p>
-                </div>
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">local_shipping</span></div>
-                    <h2>788</h2>
-                    <p>Land Shipments</p>
-                </div>
-                <div class="stat-card">
-                    <div class="top"><span class="material-symbols-outlined">pending_actions</span></div>
-                    <h2>27</h2>
-                    <p>Awaiting Pickup</p>
-                </div>
+      <div class="view" id="shipments">
+    <div class="stat-row">
+        <div class="stat-card">
+            <div class="top">
+                <span class="material-symbols-outlined">inventory_2</span>
             </div>
-
-            <div class="panel">
-                <div class="panel-head">
-                    <h3>All Shipments</h3>
-                    <button class="d-btn errorpage">New Shipment </button>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Shipment</th>
-                            <th>Customer</th>
-                            <th>Route</th>
-                            <th>Mode</th>
-                            <th>ETA</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#STK-2291</td>
-                            <td>Vantra Retail</td>
-                            <td>New York → Miami</td>
-                            <td>Land</td>
-                            <td>Jul 08</td>
-                            <td><span class="badge transit">In Transit</span></td>
-                        </tr>
-                        <tr>
-                            <td>#STK-2288</td>
-                            <td>Ferro Parts</td>
-                            <td>Shanghai → LA</td>
-                            <td>Sea</td>
-                            <td>Jul 05</td>
-                            <td><span class="badge delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>#STK-2285</td>
-                            <td>Coastline Exports</td>
-                            <td>Dubai → London</td>
-                            <td>Air</td>
-                            <td>Jul 07</td>
-                            <td><span class="badge pending">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>#STK-2280</td>
-                            <td>Nova Electronics</td>
-                            <td>Chicago → Dallas</td>
-                            <td>Land</td>
-                            <td>Jul 04</td>
-                            <td><span class="badge delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>#STK-2277</td>
-                            <td>Vantra Retail</td>
-                            <td>Mumbai → Dubai</td>
-                            <td>Sea</td>
-                            <td>Jul 10</td>
-                            <td><span class="badge transit">In Transit</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2>4,826</h2>
+            <p>Items In Stock</p>
         </div>
+
+        <div class="stat-card">
+            <div class="top">
+                <span class="material-symbols-outlined">move_to_inbox</span>
+            </div>
+            <h2>642</h2>
+            <p>Incoming Inventory</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="top">
+                <span class="material-symbols-outlined">outbox</span>
+            </div>
+            <h2>518</h2>
+            <p>Outgoing Orders</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="top">
+                <span class="material-symbols-outlined">warning</span>
+            </div>
+            <h2>39</h2>
+            <p>Low Stock Alerts</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-head">
+            <h3>Inventory Operations</h3>
+            <button class="d-btn errorpage">Add Inventory</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Reference</th>
+                    <th>Product</th>
+                    <th>Warehouse Zone</th>
+                    <th>Operation</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>#INV-4521</td>
+                    <td>Laptop Accessories</td>
+                    <td>Zone A</td>
+                    <td>Stock Received</td>
+                    <td>Jul 08</td>
+                    <td><span class="badge delivered">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>#INV-4518</td>
+                    <td>Office Furniture</td>
+                    <td>Zone C</td>
+                    <td>Order Picking</td>
+                    <td>Jul 07</td>
+                    <td><span class="badge transit">In Progress</span></td>
+                </tr>
+
+                <tr>
+                    <td>#INV-4514</td>
+                    <td>Winter Jackets</td>
+                    <td>Zone B</td>
+                    <td>Quality Check</td>
+                    <td>Jul 07</td>
+                    <td><span class="badge pending">Pending</span></td>
+                </tr>
+
+                <tr>
+                    <td>#INV-4509</td>
+                    <td>Food Packages</td>
+                    <td>Cold Storage</td>
+                    <td>Dispatch Processing</td>
+                    <td>Jul 06</td>
+                    <td><span class="badge delivered">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>#INV-4503</td>
+                    <td>Mobile Devices</td>
+                    <td>Zone D</td>
+                    <td>Restocking</td>
+                    <td>Jul 05</td>
+                    <td><span class="badge transit">In Progress</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
         <!-- ========== 3. FLEET VIEW ========== -->
         <div class="view" id="fleet">
@@ -908,7 +941,7 @@
                 <h3>Fleet Overview</h3>
                 <div class="fleet-grid">
                     <div class="fleet-card">
-                        <img src="./src/4.webp" alt="Freight truck">
+        
                         <div class="fleet-card-body">
                             <h4>Truck Unit TX-14</h4>
                             <p>Assigned Route: NY → Miami</p>
@@ -916,7 +949,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="./src/19.webp" alt="Cargo ship">
+                 
                         <div class="fleet-card-body">
                             <h4>Vessel Pacific Star</h4>
                             <p>Assigned Route: Shanghai → LA</p>
@@ -924,7 +957,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="./src/20.webp" alt="Cargo plane">
+            
                         <div class="fleet-card-body">
                             <h4>Cargo Jet CJ-02</h4>
                             <p>Assigned Route: Dubai → London</p>
@@ -932,7 +965,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="./src/21.webp" alt="Delivery van">
+                   
                         <div class="fleet-card-body">
                             <h4>Van Unit VN-08</h4>
                             <p>Assigned Route: Local Deliveries</p>
@@ -940,7 +973,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="./src/abt-bg.webp" alt="Airport cargo loading">
+                      
                         <div class="fleet-card-body">
                             <h4>Cargo Jet CJ-05</h4>
                             <p>Assigned Route: Mumbai → Dubai</p>
@@ -948,7 +981,7 @@
                         </div>
                     </div>
                     <div class="fleet-card">
-                        <img src="./src/23.webp" alt="Ship at port">
+                      
                         <div class="fleet-card-body">
                             <h4>Vessel Coral Wave</h4>
                             <p>Assigned Route: At Port - Loading</p>
@@ -1068,29 +1101,7 @@
                 </div>
             </div>
 
-            <div class="panel">
-                <h3>Top Customers</h3>
-                <div class="cust-grid">
-                    <div class="cust-card">
-                        <img src="./src/person1.webp" alt="Customer">
-                        <h4>Vantra Retail</h4>
-                        <span>Enterprise Account</span>
-                        <p class="cust-stat">212 Shipments</p>
-                    </div>
-                    <div class="cust-card">
-                        <img src="./src/person2.webp" alt="Customer">
-                        <h4>Ferro Parts</h4>
-                        <span>Business Account</span>
-                        <p class="cust-stat">168 Shipments</p>
-                    </div>
-                    <div class="cust-card">
-                        <img src="./src/person3.webp" alt="Customer">
-                        <h4>Coastline Exports</h4>
-                        <span>Business Account</span>
-                        <p class="cust-stat">134 Shipments</p>
-                    </div>
-                </div>
-            </div>
+   
 
             <div class="panel">
                 <div class="panel-head">
@@ -1108,28 +1119,28 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="cell-item"><img src="./src/person1.webp">Vantra
+                            <td class="cell-item">Vantra
                                 Retail</td>
                             <td>ramesh@vantra.com</td>
                             <td>Enterprise</td>
                             <td>212</td>
                         </tr>
                         <tr>
-                            <td class="cell-item"><img src="./src/person2.webp">Ferro
+                            <td class="cell-item">Ferro
                                 Parts</td>
                             <td>anjali@ferroparts.com</td>
                             <td>Business</td>
                             <td>168</td>
                         </tr>
                         <tr>
-                            <td class="cell-item"><img src="./src/person3.webp">Coastline
+                            <td class="cell-item">Coastline
                                 Exports</td>
                             <td>david@coastline.com</td>
                             <td>Business</td>
                             <td>134</td>
                         </tr>
                         <tr>
-                            <td class="cell-item"><img src="./src/p1.webp">Nova
+                            <td class="cell-item">Nova
                                 Electronics</td>
                             <td>priya@novaelec.com</td>
                             <td>Enterprise</td>
