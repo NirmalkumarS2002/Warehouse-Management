@@ -167,21 +167,21 @@
 
     .fixed-btn {
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 40px;
+        right: 40px;
     }
 
     .fixed-btn button {
         padding: 10px;
-        height: 50px;
-        width: 50px;
+        height: clamp(40px,4.5vw,50px);
+        width: clamp(40px,4.5vw,50px);
         background: var(--pcolor);
         border-radius: 7px;
         border: none;
     }
 
     .fixed-btn button span {
-        font-size: 25px;
+        font-size: clamp(20px,2.3vw,25px);
         font-weight: bold;
     }
 
@@ -208,11 +208,11 @@
 
         <div class="menubar">
             <ul class="menulinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="pages.html">Pages</a></li>
-                <li><a href="blog.html">blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="headlink active">Home</a></li>
+                <li><a href="about.html" class="headlink">About</a></li>
+                <li><a href="pages.html" class="headlink">Pages</a></li>
+                <li><a href="blog.html" class="headlink">blog</a></li>
+                <li><a href="contact.html" class="headlink">Contact</a></li>
             </ul>
 
             <div class="menu-btn">
@@ -321,7 +321,7 @@
         <div class="footer-top">
             <div class="footer1">
 
-                <a href=""> <img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
+                <a href="index.html"> <img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
                 <p>Streamline inventory, storage, and distribution with smart
                     warehouse management solutions.</p>
 
@@ -367,9 +367,9 @@
                 <h2>Location</h2>
 
                 <div class="footer-links">
-                    <a href=""><span class="material-symbols-outlined">call</span>+91 12345 09876</a>
-                    <a href=""><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
-                    <a href=""><span class="material-symbols-outlined">location_on</span>Chennai,Tamilnadu</a>
+                    <a href="404.html"><span class="material-symbols-outlined">call</span>+91 12345 09876</a>
+                    <a href="404.html"><span class="material-symbols-outlined">mail</span>admin@gmail.com</a>
+                    <a href="404.html"><span class="material-symbols-outlined">location_on</span>Chennai,Tamilnadu</a>
                 </div>
 
             </div>
@@ -378,8 +378,8 @@
         <div class="footer-bottom">
             <p>@Copyright 2026 Created by Stackly</p>
             <div>
-                <a href="">Terms and conditions</a>
-                <a href="">Privacy Policy</a>
+                <a href="404.html">Terms and conditions</a>
+                <a href="404.html">Privacy Policy</a>
             </div>
         </div>
 

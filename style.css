@@ -46,6 +46,31 @@ body {
     text-decoration: none;
     font-size: 17px;
     color: white;
+    position: relative;
+}
+
+.headlink::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background: var(--pcolor);
+    position: absolute;
+    bottom: -5px;
+    transition: .6s ease;
+}
+
+.headlink:hover::before {
+    width: 100%;
+}
+
+.headlink.active::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: var(--pcolor);
+    position: absolute;
+    bottom: -5px;
+    transition: .6s ease;
 }
 
 .mccontainer {
@@ -58,6 +83,10 @@ body {
     text-decoration: none;
     font-size: 17px;
     color: white;
+}
+
+.mblno:hover {
+    color: var(--pcolor);
 }
 
 .menu-btn {
@@ -78,19 +107,26 @@ body {
 
 .header-sotial-links a {
     font-size: 25px;
-    background: #b9b9b741;
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-    width: 100%;
-    height: 45px;
     width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    padding: 10px;
-
     text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all .4s ease;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
 
+.header-sotial-links a:hover {
+    background: #ffb534;
+    color: black;
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 181, 52, .8);
+    border-color: #ffb534;
 }
 
 .nsicons {
@@ -116,6 +152,16 @@ body {
     background: #FFB334;
     color: black;
     font-weight: bold;
+    cursor: pointer;
+    transition: all .4s ease;
+    border: 2px solid #FFB334;
+}
+
+.login-btn:hover {
+    background: transparent;
+    color: #FFB334;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(255, 179, 52, 0.7);
 }
 
 @media (max-width:1180px) {
@@ -201,15 +247,27 @@ body {
         gap: 10px;
     }
 
-    .side-sotial-links a {
-        font-size: 25px;
-        background: white;
-        width: 100%;
-        border-radius: 50%;
-        padding: 5px;
-        background: #b9b9b741;
-        color: var(--pcolor);
-    }
+   .side-sotial-links a {
+    font-size: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(185, 185, 183, 0.25);
+    color: var(--pcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.side-sotial-links a:hover {
+    background: var(--pcolor);
+    color: black;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 179, 52, 0.8);
+}
 }
 
 
@@ -274,13 +332,13 @@ body {
 }
 
 .subscirbe-box input::placeholder {
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, .7);
 }
 
 .subscirbe-box input:focus {
     outline: none;
     border-color: #ffa200;
-    box-shadow: 0 0 15px rgba(255,178,52,.4);
+    box-shadow: 0 0 15px rgba(255, 178, 52, .4);
 }
 
 .subscribe-btn {
@@ -300,7 +358,7 @@ body {
 .subscribe-btn:hover {
     background: #ffa200;
     transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(255,178,52,.5);
+    box-shadow: 0 0 15px rgba(255, 178, 52, .5);
 }
 
 /* Social Links */
@@ -322,12 +380,14 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    transition: .4s;
+    transition: all .4s ease;
 }
 
 .footer-sotial-links a:hover {
     background: var(--pcolor);
-    transform: translateY(-3px);
+    color: black;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 179, 52, 0.8);
 }
 
 /* Headings */
@@ -374,7 +434,7 @@ body {
 .footer-bottom {
     width: 100%;
     max-width: 1300px;
-    border-top: 1px solid rgba(255,255,255,.1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
     padding: 25px 20px;
     display: flex;
     justify-content: space-between;
