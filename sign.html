@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse - sign up page</title>
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oldenburg&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Noto Sans", sans-serif;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 100vh;
+        background: gray;
+    }
+
+    .signpage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .left {
+        background: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .signlogo {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        width: 160px;
+    }
+
+    .left h1 {
+        font-size: clamp(35px, 4vw, 45px);
+        margin-bottom: 10px;
+    }
+
+    .left p {
+        font-size: 15px;
+        max-width: 400px;
+        text-align: center;
+        line-height: 1.5;
+    }
+</style>
+
+<body>
+    <section class="signpage">
+
+        <div class="left">
+            <a href="sign.html"><img src="./src/logo.webp" alt="company logo" class="signlogo"></a>
+            <h1>Get Started Today</h1>
+            <p>Create your account to manage inventory, shipments, and warehouse operations efficiently.</p>
+        </div>
+
+        <div class="right">
+            <h1>Create Your Accout</h1>
+
+            <form class="formbox">
+
+                <div class="inputbox">
+                    <select id="role">
+                        <option value="">select role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Client">Client</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">package_2</span>
+                    <input type="text" placeholder="Enter Your Name" id="name">
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">person</span>
+                    <input type="tel" placeholder="Enter Your Number" id="number">
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">mail</span>
+                    <input type="email" placeholder="Enter Your Email" id="email">
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">lock</span>
+                    <input type="password" placeholder="Enter Your Password" id="password">
+                    <span class="material-symbols-outlined">visibility</span>
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">lock</span>
+                    <input type="password" placeholder="Enter Your Confirm Password" id="password1">
+                    <span class="material-symbols-outlined">visibility</span>
+                </div>
+
+                <div class="sbtn">
+                    <button>submit</button>
+                </div>
+
+            </form>
+
+            <div class="signfooter">
+                <div>
+                    <p>Already have an Account?</p>
+                    <a href="login.html">Login Now</a>
+                </div>
+                <a href="index.html">Back to Home</a>
+            </div>
+
+        </div>
+
+    </section>
+</body>
+
+</html>
