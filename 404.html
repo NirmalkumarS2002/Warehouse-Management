@@ -31,18 +31,19 @@
         font-family: 'Outfit', sans-serif;
     }
 
-    :root{
-           --pcolor: #FFB334;
+    :root {
+        --pcolor: #FFB334;
     }
 
     body {
+        overflow-x: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         min-height: 100vh;
         backdrop-filter: blur(5px);
-        background: linear-gradient(125deg,rgba(0, 0, 0, 0.904),rgba(0, 0, 0, 0.705)), url("./src/4042.webp");
+        background: linear-gradient(125deg, rgba(0, 0, 0, 0.904), rgba(0, 0, 0, 0.705)), url("./src/4042.webp");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -56,7 +57,8 @@
     }
 
     .error h1 {
-        font-size: clamp(80px, 12vw, 140px);
+        font-size: clamp(80px, 15vw, 170px);
+        font-weight: 900;
         color: var(--pcolor);
 
     }
@@ -90,22 +92,39 @@
         min-width: 150px;
         font-weight: bolder;
         color: white;
+        cursor: pointer;
+        transition: all 0.4s ease;
     }
 
-    .errordiv button span{
-        font-size: 20px;
-        
-    }
-
-    .btn1{
+    .btn1 {
         background: var(--pcolor);
         border: none;
     }
 
-    .btn2{
+    .btn1:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 25px rgba(255, 179, 52, 0.5);
+        background: #ffc04d;
+        color: black;
+    }
+
+    .btn2 {
         background: transparent;
         border: 1px solid var(--pcolor);
     }
+
+    .btn2:hover {
+        background: var(--pcolor);
+        color: black;
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 25px rgba(255, 179, 52, 0.5);
+    }
+
+    .errordiv button span {
+        font-size: 20px;
+    }
+
+
 
     @media (max-width:500px) {
 

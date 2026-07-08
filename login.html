@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Login Page</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oldenburg&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .loginpage {
+            font-family: "Noto Sans", sans-serif;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <section class="loginpage">
+        <div class="right">
+            <a href="login.html" class="logoimage"><img src="./src/logo.webp" alt="company logo"></a>
+            <h1>welcome back</h1>
+            <p>continue your wellness Journey with Stackly</p>
+        </div>
+
+        <div class="left">
+            <h1>Login Here</h1>
+
+            <form class="login-form">
+
+                <div class="inputbox">
+                    <select name="role" id="role">
+                        <option value="">Select Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Client">Client</option>
+                    </select>
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">mail</span>
+                    <input type="email" placeholder="Enter Your Email" id="email">
+                </div>
+
+                <div class="inputbox">
+                    <span class="material-symbols-outlined">lock</span>
+                    <input type="password" placeholder="Enter Your Password" id="password">
+                    <span class="material-symbols-outlined">visibility</span>
+                </div>
+
+                <div class="forget">
+                    <a href="404.html">Forget Password?</a>
+                </div>
+
+                <div class="sbtn">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+
+            <div class="loginfooter">
+                <div>
+                    <p>Don't Have an Accout?</p><a href="Create Account"></a>
+                </div>
+                <a href="index.html"><span class="material-symbols-outlined">arrow_left_alt</span>Back to Home</a>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
