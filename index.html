@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+        
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -45,6 +47,7 @@
 
         position: relative;
         padding: 80px 15px;
+            font-family: "Noto Sans", sans-serif;
     }
 
     .hero-text {
@@ -91,12 +94,12 @@
 
     .h-primary {
         background: var(--pcolor);
-        color: white;
+        color: black;
     }
 
     .h-outline {
-        background: transparent;
-        color: white;
+        background: rgba(255, 237, 188, 0.253);
+        color: black;
 
     }
 
@@ -173,15 +176,15 @@
 
     .fixed-btn button {
         padding: 10px;
-        height: clamp(40px,4.5vw,50px);
-        width: clamp(40px,4.5vw,50px);
+        height: clamp(40px, 4.5vw, 50px);
+        width: clamp(40px, 4.5vw, 50px);
         background: var(--pcolor);
         border-radius: 7px;
         border: none;
     }
 
     .fixed-btn button span {
-        font-size: clamp(20px,2.3vw,25px);
+        font-size: clamp(20px, 2.3vw, 25px);
         font-weight: bold;
     }
 
@@ -204,7 +207,7 @@
 <body>
 
     <header class="header">
-        <img src="./src/logo.webp" alt="Company Logo" class="companylogo">
+        <a href="index.html" class="companylogoa"><img src="./src/logo.webp" alt="Company Logo" class="companylogo"></a>
 
         <div class="menubar">
             <ul class="menulinks">

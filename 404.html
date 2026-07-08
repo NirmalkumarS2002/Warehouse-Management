@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,-50..200" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oldenburg&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&amp;display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: 'Outfit', sans-serif;
+    }
+
+    :root{
+           --pcolor: #FFB334;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+        backdrop-filter: blur(5px);
+        background: linear-gradient(125deg,rgba(0, 0, 0, 0.904),rgba(0, 0, 0, 0.705)), url("./src/4042.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .error {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .error h1 {
+        font-size: clamp(80px, 12vw, 140px);
+        color: var(--pcolor);
+
+    }
+
+    .error h2 {
+        font-size: clamp(30px, 4vw, 50px);
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .error p {
+        font-size: clamp(15px, 1.6vw, 17px);
+        max-width: 500px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    .errordiv {
+        display: flex;
+        gap: 10px;
+    }
+
+    .errordiv button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: 7px;
+        min-width: 150px;
+        font-weight: bolder;
+        color: white;
+    }
+
+    .errordiv button span{
+        font-size: 20px;
+        
+    }
+
+    .btn1{
+        background: var(--pcolor);
+        border: none;
+    }
+
+    .btn2{
+        background: transparent;
+        border: 1px solid var(--pcolor);
+    }
+
+    @media (max-width:500px) {
+
+        .errordiv {
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .errordiv button {
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            width: 80%;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="error">
+        <h1>404</h1>
+        <h2>Package Not Found</h2>
+        <p>
+            The page you're looking for seems to be misplaced in our warehouse.
+            Let's get you back to the right destination.
+        </p>
+
+        <div class="errordiv">
+            <button class="btn1"><span class="material-symbols-outlined">home</span>Go to Home</button>
+            <button class="btn2"><span class="material-symbols-outlined">arrow_back</span>Go Back</button>
+        </div>
+    </div>
+</body>
+
+</html>
