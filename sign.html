@@ -45,6 +45,10 @@
         grid-template-columns: 1fr 1fr;
         width: 100%;
         max-width: 1000px;
+        margin: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 1px 1px 20px var(--pcolor);
     }
 
     .left {
@@ -54,6 +58,7 @@
         justify-content: center;
         flex-direction: column;
         position: relative;
+        padding: 15px;
     }
 
     .signlogo {
@@ -64,7 +69,7 @@
     }
 
     .left h1 {
-        font-size: clamp(35px, 4vw, 45px);
+        font-size: clamp(30px, 4vw, 45px);
         margin-bottom: 10px;
     }
 
@@ -73,6 +78,103 @@
         max-width: 400px;
         text-align: center;
         line-height: 1.5;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: blue;
+        width: 100%;
+        padding: 40px;
+    }
+
+    .right h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .inputbox {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .inputbox input,
+    .inputbox select {
+        width: 100%;
+        padding: 12px 35px;
+        border-radius: 5px;
+        font-size: 13px;
+        border: 1px solid var(--pcolor);
+    }
+
+    .ic1 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        left: 5px;
+    }
+
+    .ic2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        left: 5px;
+    }
+
+    .ic3 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        right: 5px;
+    }
+
+    .submitbtn {
+        width: 100%;
+        padding: 12px 35px;
+        border-radius: 5px;
+        font-size: 13px;
+        border: none;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .signfooter {
+        text-align: center;
+    }
+
+    .signfooter div {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 10px;
+    }
+
+    .signfooter div p,
+    .signfooter div a,
+    .signfooter a {
+        text-decoration: none;
+        font-size: 13px;
+        color: white;
+    }
+
+    @media (max-width:760px) {
+
+        .left {
+            min-height: 300px;
+        }
+
+        .right {
+            padding: 15px;
+        }
+
+        .signpage {
+            grid-template-columns: 1fr;
+        }
     }
 </style>
 
@@ -91,6 +193,7 @@
             <form class="formbox">
 
                 <div class="inputbox">
+                    <span class="material-symbols-outlined ic1">person</span>
                     <select id="role">
                         <option value="">select role</option>
                         <option value="Admin">Admin</option>
@@ -99,34 +202,34 @@
                 </div>
 
                 <div class="inputbox">
-                    <span class="material-symbols-outlined">package_2</span>
+                    <span class="material-symbols-outlined ic1">package_2</span>
                     <input type="text" placeholder="Enter Your Name" id="name">
                 </div>
 
                 <div class="inputbox">
-                    <span class="material-symbols-outlined">person</span>
+                    <span class="material-symbols-outlined ic1">call</span>
                     <input type="tel" placeholder="Enter Your Number" id="number">
                 </div>
 
                 <div class="inputbox">
-                    <span class="material-symbols-outlined">mail</span>
+                    <span class="material-symbols-outlined ic1">mail</span>
                     <input type="email" placeholder="Enter Your Email" id="email">
                 </div>
 
                 <div class="inputbox">
-                    <span class="material-symbols-outlined">lock</span>
+                    <span class="material-symbols-outlined ic2">lock</span>
                     <input type="password" placeholder="Enter Your Password" id="password">
-                    <span class="material-symbols-outlined">visibility</span>
+                    <span class="material-symbols-outlined ic3">visibility</span>
                 </div>
 
                 <div class="inputbox">
-                    <span class="material-symbols-outlined">lock</span>
+                    <span class="material-symbols-outlined ic2">lock</span>
                     <input type="password" placeholder="Enter Your Confirm Password" id="password1">
-                    <span class="material-symbols-outlined">visibility</span>
+                    <span class="material-symbols-outlined ic3">visibility</span>
                 </div>
 
                 <div class="sbtn">
-                    <button>submit</button>
+                    <button class="submitbtn">submit</button>
                 </div>
 
             </form>
