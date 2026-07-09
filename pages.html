@@ -37,7 +37,12 @@
         --light: #f5f5f5;
     }
 
-       body {
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    body {
         overflow-x: hidden;
         scroll-behavior: smooth;
         font-family: "Noto Sans", sans-serif;
@@ -52,7 +57,7 @@
 
     /* ===================== SECTION 1 — BLOG HERO BANNER ===================== */
 
-    
+
     /* ============ BLOG BANNER ============ */
     .blog-banner {
         width: 100%;
@@ -70,7 +75,7 @@
         gap: 15px;
         padding: 120px 15px 60px;
     }
- 
+
     .blog-banner span {
         color: var(--pcolor);
         font-size: 15px;
@@ -78,20 +83,20 @@
         text-transform: uppercase;
         font-weight: 600;
     }
- 
+
     .blog-banner h1 {
         color: white;
         font-size: clamp(28px, 4vw, 48px);
         max-width: 750px;
     }
- 
+
     .blog-banner p {
         color: rgba(255, 255, 255, 0.8);
         max-width: 600px;
         font-size: clamp(14px, 1.6vw, 17px);
         line-height: 1.7;
     }
- 
+
     .breadcrumb {
         display: flex;
         gap: 8px;
@@ -99,18 +104,18 @@
         color: rgba(255, 255, 255, 0.7);
         font-size: 15px;
     }
- 
+
     .breadcrumb a {
         color: var(--pcolor);
         text-decoration: none;
     }
- 
+
     /* ============ SHARED SECTION STYLES ============ */
     section {
         width: 100%;
         padding: 80px 20px;
     }
- 
+
     .section-head {
         display: flex;
         flex-direction: column;
@@ -119,7 +124,7 @@
         gap: 10px;
         margin-bottom: 50px;
     }
- 
+
     .section-head span {
         color: var(--pcolor);
         font-size: 14px;
@@ -127,25 +132,25 @@
         text-transform: uppercase;
         font-weight: 600;
     }
- 
+
     .section-head h2 {
         font-size: clamp(24px, 3vw, 38px);
         color: #111;
         max-width: 650px;
     }
- 
+
     .section-head p {
         max-width: 600px;
         color: #555;
         font-size: 15px;
         line-height: 1.7;
     }
- 
+
     /* ============ 1. FEATURED POST ============ */
     .featured-section {
         background: white;
     }
- 
+
     .featured-wrap {
         max-width: 1250px;
         margin: 0 auto;
@@ -157,20 +162,20 @@
         border-radius: 12px;
         overflow: hidden;
     }
- 
+
     .featured-image {
         flex: 1;
         min-width: 300px;
         height: 420px;
     }
- 
+
     .featured-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
     }
- 
+
     .featured-content {
         flex: 1;
         min-width: 300px;
@@ -179,13 +184,13 @@
         flex-direction: column;
         gap: 15px;
     }
- 
+
     .post-meta {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
     }
- 
+
     .post-meta span {
         display: flex;
         align-items: center;
@@ -193,7 +198,7 @@
         font-size: 13px;
         color: #666;
     }
- 
+
     .post-tag {
         background: var(--pcolor);
         color: black;
@@ -204,19 +209,19 @@
         text-transform: uppercase;
         width: fit-content;
     }
- 
+
     .featured-content h2 {
         font-size: clamp(22px, 3vw, 30px);
         color: #111;
         line-height: 1.3;
     }
- 
+
     .featured-content p {
         color: #555;
         font-size: 15px;
         line-height: 1.7;
     }
- 
+
     .read-more {
         color: black;
         font-weight: 700;
@@ -226,17 +231,18 @@
         align-items: center;
         gap: 8px;
         width: fit-content;
+        flex: 1;
     }
- 
+
     .read-more:hover {
         color: var(--pcolor);
     }
- 
+
     /* ============ 2. BLOG GRID ============ */
     .blog-grid-section {
         background: #f7f7f7;
     }
- 
+
     .blog-grid-wrap {
         max-width: 1250px;
         margin: 0 auto;
@@ -244,7 +250,7 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 25px;
     }
- 
+
     .blog-card {
         background: white;
         border-radius: 10px;
@@ -254,54 +260,58 @@
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
         transition: .4s ease;
     }
- 
+
     .blog-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     }
- 
+
     .blog-card img {
         width: 100%;
         height: 200px;
         object-fit: cover;
     }
- 
+
     .blog-card-body {
         padding: 22px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
     }
- 
+
     .blog-card .post-tag {
         margin-bottom: 5px;
     }
- 
+
     .blog-card-body h3 {
         font-size: 18px;
         color: #111;
         line-height: 1.4;
+        min-height: clamp(2px, 3.5vw, 50px);
+        margin-bottom: clamp(5px, 1vw, 10px);
     }
- 
+
     .blog-card-body p {
         font-size: 14px;
         color: #555;
         line-height: 1.6;
+        min-height: 70px;
+        margin: 5px;
+        flex: 1;
     }
- 
+
     /* ============ 3. CATEGORIES ============ */
     .category-section {
         background: black;
     }
- 
+
     .category-section .section-head h2 {
         color: white;
     }
- 
+
     .category-section .section-head p {
         color: rgba(255, 255, 255, 0.7);
     }
- 
+
     .category-wrap {
         max-width: 1100px;
         margin: 0 auto;
@@ -309,7 +319,7 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
     }
- 
+
     .category-card {
         background: #141414;
         border: 1px solid rgba(255, 255, 255, 0.08);
@@ -322,32 +332,32 @@
         gap: 10px;
         transition: .4s ease;
     }
- 
+
     .category-card:hover {
         border-color: var(--pcolor);
         transform: translateY(-8px);
     }
- 
+
     .category-card span.material-symbols-outlined {
         font-size: 34px;
         color: var(--pcolor);
     }
- 
+
     .category-card h3 {
         color: white;
         font-size: 16px;
     }
- 
+
     .category-card p {
         color: rgba(255, 255, 255, 0.55);
         font-size: 13px;
     }
- 
+
     /* ============ 4. POPULAR POSTS ============ */
     .popular-section {
         background: white;
     }
- 
+
     .popular-wrap {
         max-width: 1000px;
         margin: 0 auto;
@@ -355,7 +365,7 @@
         flex-direction: column;
         gap: 20px;
     }
- 
+
     .popular-item {
         display: flex;
         gap: 20px;
@@ -365,12 +375,12 @@
         padding: 15px;
         transition: .4s ease;
     }
- 
+
     .popular-item:hover {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         transform: translateX(5px);
     }
- 
+
     .popular-item img {
         width: 130px;
         height: 100px;
@@ -378,30 +388,30 @@
         border-radius: 8px;
         flex-shrink: 0;
     }
- 
+
     .popular-item-content {
         display: flex;
         flex-direction: column;
         gap: 6px;
     }
- 
+
     .popular-item-content span {
         font-size: 12px;
         color: var(--pcolor);
         font-weight: 700;
         text-transform: uppercase;
     }
- 
+
     .popular-item-content h3 {
         font-size: 16px;
         color: #111;
     }
- 
+
     .popular-item-content p {
         font-size: 13px;
         color: #777;
     }
- 
+
     /* ============ 5. NEWSLETTER ============ */
     .newsletter-section {
         background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.78)),
@@ -416,7 +426,7 @@
         text-align: center;
         gap: 20px;
     }
- 
+
     .newsletter-section span {
         color: var(--pcolor);
         font-size: 14px;
@@ -424,20 +434,20 @@
         text-transform: uppercase;
         font-weight: 600;
     }
- 
+
     .newsletter-section h2 {
         color: white;
         font-size: clamp(24px, 3.5vw, 38px);
         max-width: 650px;
     }
- 
+
     .newsletter-section p {
         color: rgba(255, 255, 255, 0.75);
         max-width: 550px;
         font-size: 15px;
         line-height: 1.7;
     }
- 
+
     .newsletter-form {
         display: flex;
         gap: 10px;
@@ -447,7 +457,7 @@
         width: 100%;
         max-width: 480px;
     }
- 
+
     .newsletter-form input {
         flex: 1;
         min-width: 220px;
@@ -457,11 +467,11 @@
         background: transparent;
         color: white;
     }
- 
+
     .newsletter-form input::placeholder {
         color: rgba(255, 255, 255, 0.7);
     }
- 
+
     .newsletter-form button {
         padding: 15px 28px;
         background: var(--pcolor);
@@ -471,17 +481,17 @@
         cursor: pointer;
         transition: .4s ease;
     }
- 
+
     .newsletter-form button:hover {
         background: transparent;
         color: var(--pcolor);
     }
- 
+
     /* ============ 6. AUTHOR SPOTLIGHT ============ */
     .author-section {
         background: #f7f7f7;
     }
- 
+
     .author-wrap {
         max-width: 1000px;
         margin: 0 auto;
@@ -490,11 +500,11 @@
         gap: 40px;
         background: white;
         border-radius: 12px;
-        padding: clamp(10px,2.5vw,40px);
+        padding: clamp(10px, 2.5vw, 40px);
         flex-wrap: wrap;
         box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
     }
- 
+
     .author-image {
         width: 160px;
         height: 160px;
@@ -503,13 +513,13 @@
         flex-shrink: 0;
         border: 4px solid var(--pcolor);
     }
- 
+
     .author-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
- 
+
     .author-content {
         flex: 1;
         min-width: 250px;
@@ -517,7 +527,7 @@
         flex-direction: column;
         gap: 10px;
     }
- 
+
     .author-content span {
         color: var(--pcolor);
         font-size: 13px;
@@ -525,24 +535,24 @@
         text-transform: uppercase;
         font-weight: 700;
     }
- 
+
     .author-content h3 {
         font-size: 22px;
         color: #111;
     }
- 
+
     .author-content p {
         font-size: 14px;
         color: #555;
         line-height: 1.7;
     }
- 
+
     .author-socials {
         display: flex;
         gap: 12px;
         margin-top: 8px;
     }
- 
+
     .author-socials a {
         width: 38px;
         height: 38px;
@@ -555,33 +565,33 @@
         text-decoration: none;
         transition: .4s ease;
     }
- 
+
     .author-socials a:hover {
         background: var(--pcolor);
         color: black;
     }
- 
+
     /* ============ RESPONSIVE ============ */
     @media (max-width: 768px) {
         .featured-content {
             padding: 20px;
         }
- 
+
         .popular-item {
             flex-direction: column;
             align-items: flex-start;
         }
- 
+
         .popular-item img {
             width: 100%;
             height: 160px;
         }
- 
+
         .author-wrap {
             flex-direction: column;
             text-align: center;
         }
- 
+
         .author-socials {
             justify-content: center;
         }
@@ -598,7 +608,7 @@
                 <li><a href="index.html" class="headlink">Home</a></li>
                 <li><a href="about.html" class="headlink">About</a></li>
                 <li><a href="pages.html" class="headlink active">Blog</a></li>
-                <li><a href="service.html" class="headlink">service</a></li>
+                <li><a href="service.html" class="headlink">Service</a></li>
                 <li><a href="contact.html" class="headlink">Contact</a></li>
             </ul>
 
@@ -649,7 +659,7 @@
         </div>
     </header>
 
-  <section class="blog-banner reveal">
+    <section class="blog-banner reveal">
         <span>Our Blog</span>
         <h1>Insights On Warehouse And Supply Chain Management</h1>
         <p>Tips, trends, and updates from our team to help you run a smarter and more efficient
@@ -660,15 +670,14 @@
             <p>Blog</p>
         </div>
     </section>
- 
+
     <!-- ================= 1. FEATURED POST ================= -->
     <section class="featured-section reveal">
         <div class="featured-wrap">
             <div class="featured-image reveal-left">
-                <img src="./src/b8.webp"
-                    alt="Featured blog post">
+                <img src="./src/b8.webp" alt="Featured blog post">
             </div>
- 
+
             <div class="featured-content reveal-right">
                 <span class="post-tag">Featured</span>
                 <div class="post-meta">
@@ -684,7 +693,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- ================= 2. BLOG GRID ================= -->
     <section class="blog-grid-section reveal">
         <div class="section-head">
@@ -692,11 +701,10 @@
             <h2>Recent Blog Posts</h2>
             <p>Explore our latest articles covering inventory, logistics, and warehouse best practices.</p>
         </div>
- 
+
         <div class="blog-grid-wrap">
             <div class="blog-card reveal delay-1">
-                                <img src="./src/b2.webp"
-                    alt="Warehouse safety">
+                <img src="./src/b2.webp" alt="Warehouse safety">
                 <div class="blog-card-body">
                     <span class="post-tag">Safety</span>
                     <h3>Top Safety Practices For Modern Warehouses</h3>
@@ -704,10 +712,9 @@
                     <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
- 
+
             <div class="blog-card reveal delay-2">
-                <img src="./src/b1.webp"
-                    alt="Distribution trends">
+                <img src="./src/b1.webp" alt="Distribution trends">
                 <div class="blog-card-body">
                     <span class="post-tag">Logistics</span>
                     <h3>The Future Of Last-Mile Distribution</h3>
@@ -715,11 +722,10 @@
                     <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
-            
- 
+
+
             <div class="blog-card reveal delay-3">
-                                <img src="./src/b4.webp"
-                    alt="Packaging tips">
+                <img src="./src/b4.webp" alt="Packaging tips">
                 <div class="blog-card-body">
                     <span class="post-tag">Packaging</span>
                     <h3>Sustainable Packaging Trends To Watch</h3>
@@ -727,12 +733,11 @@
                     <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
- 
-      
- 
+
+
+
             <div class="blog-card reveal delay-4">
-                  <img src="./src/b6.webp"
-                    alt="Order fulfillment">
+                <img src="./src/b6.webp" alt="Order fulfillment">
                 <div class="blog-card-body">
                     <span class="post-tag">Fulfillment</span>
                     <h3>Improving Order Accuracy At Scale</h3>
@@ -740,11 +745,11 @@
                     <a href="404.html" class="read-more">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
- 
-        
+
+
         </div>
     </section>
- 
+
     <!-- ================= 3. CATEGORIES ================= -->
     <section class="category-section reveal">
         <div class="section-head">
@@ -752,32 +757,32 @@
             <h2>Explore By Category</h2>
             <p>Find articles relevant to your interests, from safety to technology and logistics.</p>
         </div>
- 
+
         <div class="category-wrap">
             <div class="category-card">
                 <span class="material-symbols-outlined">inventory_2</span>
                 <h3>Inventory</h3>
                 <p>14 Articles</p>
             </div>
- 
+
             <div class="category-card">
                 <span class="material-symbols-outlined">local_shipping</span>
                 <h3>Logistics</h3>
                 <p>10 Articles</p>
             </div>
- 
+
             <div class="category-card">
                 <span class="material-symbols-outlined">package_2</span>
                 <h3>Packaging</h3>
                 <p>8 Articles</p>
             </div>
- 
+
             <div class="category-card">
                 <span class="material-symbols-outlined">warehouse</span>
                 <h3>Storage</h3>
                 <p>12 Articles</p>
             </div>
- 
+
             <div class="category-card">
                 <span class="material-symbols-outlined">insights</span>
                 <h3>Technology</h3>
@@ -785,7 +790,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- ================= 4. POPULAR POSTS ================= -->
     <section class="popular-section reveal">
         <div class="section-head">
@@ -793,31 +798,28 @@
             <h2>Popular Posts This Month</h2>
             <p>The articles our readers are engaging with the most right now.</p>
         </div>
- 
+
         <div class="popular-wrap">
             <div class="popular-item reveal-left">
-                              <img src="./src/b5.webp"
-                    alt="Popular post 1">
+                <img src="./src/b5.webp" alt="Popular post 1">
                 <div class="popular-item-content">
                     <span>Inventory</span>
                     <h3>Why Real-Time Tracking Matters More Than Ever</h3>
                     <p>June 20, 2026</p>
                 </div>
             </div>
- 
+
             <div class="popular-item reveal-right">
-                <img src="./src/h6.webp"
-                    alt="Popular post 2">
+                <img src="./src/h6.webp" alt="Popular post 2">
                 <div class="popular-item-content">
                     <span>Logistics</span>
                     <h3>Building A Resilient Distribution Network</h3>
                     <p>June 15, 2026</p>
                 </div>
             </div>
- 
+
             <div class="popular-item reveal-left">
-                               <img src="./src/a3.webp"
-                    alt="Popular post 3">
+                <img src="./src/a3.webp" alt="Popular post 3">
                 <div class="popular-item-content">
                     <span>Storage</span>
                     <h3>Maximizing Space In Small Warehouses</h3>
@@ -826,7 +828,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- ================= 5. NEWSLETTER ================= -->
     <section class="newsletter-section reveal">
         <span>Stay Updated</span>
@@ -838,22 +840,21 @@
             <button class="subtn">Subscribe</button>
         </div>
     </section>
- 
+
     <!-- ================= 6. AUTHOR SPOTLIGHT ================= -->
     <section class="author-section reveal">
         <div class="author-wrap">
             <div class="author-image reveal-left">
-         <img src="./src/b7.webp"
-                    alt="Author">
+                <img src="./src/b7.webp" alt="Author">
             </div>
- 
+
             <div class="author-content reveal-right">
                 <span>Written By</span>
                 <h3>Warehouse Editorial Team</h3>
                 <p>Our editorial team shares practical insights from years of hands-on experience in
                     warehouse operations, logistics, and supply chain management to help businesses run
                     smarter.</p>
- 
+
                 <div class="author-socials">
                     <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
                     <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
@@ -864,7 +865,7 @@
         </div>
     </section>
 
-<footer class="footer reveal">
+    <footer class="footer reveal">
 
         <div class="footer-top">
             <div class="footer1 reveal-left">
@@ -893,7 +894,7 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="pages.html">Blog</a>
-                    <a href="service.html">service</a>
+                    <a href="service.html">Service</a>
                     <a href="contact.html">Contact</a>
                 </div>
 

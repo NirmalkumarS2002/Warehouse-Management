@@ -20,407 +20,422 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-        
+
     <link rel="stylesheet" href="style.css">
 
-<style>
-    * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-    }
-
-    body {
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-        font-family: "Noto Sans", sans-serif;
-    }
-
-    :root {
-        --pcolor: #FFB334;
-        --scolor: white;
-    }
-
-    /* ============ ABOUT BANNER ============ */
-    .about-banner {
-        width: 100%;
-        min-height: 60vh;
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)),
-            url("./src/zc.webp");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        gap: 15px;
-        padding: 120px 15px 60px;
-    }
-
-    .about-banner span {
-        color: var(--pcolor);
-        font-size: 15px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-
-    .about-banner h1 {
-        color: white;
-        font-size: clamp(28px, 4vw, 48px);
-        max-width: 750px;
-    }
-
-    .about-banner p {
-        color: rgba(255, 255, 255, 0.8);
-        max-width: 600px;
-        font-size: clamp(14px, 1.6vw, 17px);
-        line-height: 1.7;
-    }
-
-    .breadcrumb {
-        display: flex;
-        gap: 8px;
-        align-items: center;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 15px;
-    }
-
-    .breadcrumb a {
-        color: var(--pcolor);
-        text-decoration: none;
-    }
-
-    /* ============ SHARED SECTION STYLES ============ */
-    section {
-        width: 100%;
-        padding: 80px 20px;
-    }
-
-    .section-head {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-        margin-bottom: 50px;
-    }
-
-    .section-head span {
-        color: var(--pcolor);
-        font-size: 14px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-
-    .section-head h2 {
-        font-size: clamp(24px, 3vw, 38px);
-        color: #111;
-        max-width: 650px;
-    }
-
-    .section-head p {
-        max-width: 600px;
-        color: #555;
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    /* ============ OUR STORY ============ */
-    .story-section {
-        background: #fff;
-    }
-
-    .story-wrap {
-        max-width: 1250px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        flex-wrap: wrap;
-    }
-
-    .story-images {
-        flex: 1;
-        min-width: 300px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-
-    .story-images img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-
-    .story-images img:first-child {
-        grid-row: span 2;
-        height: 100%;
-    }
-
-    .story-content {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .story-content span {
-        color: var(--pcolor);
-        font-size: 14px;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-
-    .story-content h2 {
-        font-size: clamp(24px, 3vw, 34px);
-        color: #111;
-    }
-
-    .story-content p {
-        color: #555;
-        line-height: 1.8;
-        font-size: 15px;
-    }
-
-    .story-points {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 10px;
-    }
-
-    .story-points li {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: #333;
-        font-size: 15px;
-    }
-
-    .story-points li i {
-        color: black;
-        background: var(--pcolor);
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        flex-shrink: 0;
-    }
-
-    /* ============ MISSION & VISION ============ */
-    .mv-section {
-        background: #f7f7f7;
-    }
-
-    .mv-wrap {
-        max-width: 1250px;
-        margin: 0 auto;
-        display: flex;
-        gap: 30px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .mv-card {
-        flex: 1;
-        min-width: 280px;
-        max-width: 400px;
-        background: white;
-        border-radius: 10px;
-        padding: 40px 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-        transition: .4s ease;
-    }
-
-    .mv-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    }
-
-    .mv-card .icon-box {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        background: var(--pcolor);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .mv-card .icon-box span {
-        font-size: 30px;
-        color: black;
-    }
-
-    .mv-card h3 {
-        font-size: 20px;
-        color: #111;
-    }
-
-    .mv-card p {
-        font-size: 14px;
-        color: #555;
-        line-height: 1.7;
-    }
-
-    /* ============ WHY CHOOSE US ============ */
-    .why-section {
-        background: black;
-    }
-
-    .why-section .section-head h2 {
-        color: white;
-    }
-
-    .why-section .section-head p {
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    .why-wrap {
-        max-width: 1250px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-    }
-
-    .why-card {
-        background: #141414;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 10px;
-        padding: 30px 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        transition: .4s ease;
-    }
-
-    .why-card:hover {
-        border-color: var(--pcolor);
-        transform: translateY(-8px);
-    }
-
-    .why-card span.material-symbols-outlined {
-        font-size: 38px;
-        color: var(--pcolor);
-    }
-
-    .why-card h3 {
-        color: white;
-        font-size: 18px;
-    }
-
-    .why-card p {
-        color: rgba(255, 255, 255, 0.65);
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    /* ============ STATS / COUNTERS ============ */
-    .stats-section {
-        background: linear-gradient(125deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.75)),
-            url("./src/zcc.webp");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .stats-wrap {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        text-align: center;
-    }
-
-    .stat-box h2 {
-        color: var(--pcolor);
-        font-size: clamp(30px, 4vw, 46px);
-    }
-
-    .stat-box p {
-        color: white;
-        font-size: 15px;
-        letter-spacing: 1px;
-        margin-top: 8px;
-    }
-
-    /* ============ PROCESS / HOW WE WORK ============ */
-    .process-section {
-        background: white;
-    }
-
-    .process-wrap {
-        max-width: 1250px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 30px;
-        position: relative;
-    }
-
-    .process-card {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-        align-items: center;
-        padding: 20px;
-        position: relative;
-    }
-
-    .process-number {
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        border: 2px solid var(--pcolor);
-        color: var(--pcolor);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        font-weight: 700;
-    }
-
-    .process-card h3 {
-        font-size: 18px;
-        color: #111;
-    }
-
-    .process-card p {
-        font-size: 14px;
-        color: #555;
-        line-height: 1.7;
-    }
-
-    /* ============ RESPONSIVE ============ */
-    @media (max-width: 768px) {
-        .story-wrap {
-            flex-direction: column-reverse;
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
         }
-    }
-</style>
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        :root {
+            --pcolor: #FFB334;
+            --scolor: white;
+        }
+
+        /* ============ ABOUT BANNER ============ */
+        .about-banner {
+            width: 100%;
+            min-height: 60vh;
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.75)),
+                url("./src/zc.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 15px;
+            padding: 120px 15px 60px;
+        }
+
+        .about-banner span {
+            color: var(--pcolor);
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .about-banner h1 {
+            color: white;
+            font-size: clamp(28px, 4vw, 48px);
+            max-width: 750px;
+        }
+
+        .about-banner p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            font-size: clamp(14px, 1.6vw, 17px);
+            line-height: 1.7;
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+        }
+
+        .breadcrumb a {
+            color: var(--pcolor);
+            text-decoration: none;
+        }
+
+        /* ============ SHARED SECTION STYLES ============ */
+        section {
+            width: 100%;
+            padding: 80px 20px;
+        }
+
+        .section-head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            margin-bottom: 50px;
+        }
+
+
+        .section-head span {
+            color: var(--pcolor);
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .section-head h2 {
+            font-size: clamp(24px, 3vw, 38px);
+            color: #111;
+            max-width: 650px;
+        }
+
+        .section-head p {
+            max-width: 600px;
+            color: #555;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ============ OUR STORY ============ */
+        .story-section {
+            background: #fff;
+        }
+
+        .story-wrap {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .story-images {
+            flex: 1;
+            min-width: 300px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .story-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .story-images img:first-child {
+            grid-row: span 2;
+            height: 100%;
+        }
+
+        .story-content {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .story-content span {
+            color: var(--pcolor);
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .story-content h2 {
+            font-size: clamp(24px, 3vw, 34px);
+            color: #111;
+        }
+
+        .story-content p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .story-points {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .story-points li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .story-points li i {
+            color: black;
+            background: var(--pcolor);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ============ MISSION & VISION ============ */
+        .mv-section {
+            background: #f7f7f7;
+        }
+
+        .mv-wrap {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mv-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+            transition: .4s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .mv-card .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--pcolor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mv-card .icon-box span {
+            font-size: 30px;
+            color: black;
+        }
+
+        .mv-card h3 {
+            font-size: 20px;
+            color: #111;
+        }
+
+        .mv-card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* ============ WHY CHOOSE US ============ */
+        .why-section {
+            background: black;
+        }
+
+        .why-section .section-head h2 {
+            color: white;
+        }
+
+        .why-section .section-head p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .why-wrap {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .why-card {
+            background: #141414;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: .4s ease;
+        }
+
+        .why-card:hover {
+            border-color: var(--pcolor);
+            transform: translateY(-8px);
+        }
+
+        .why-card span.material-symbols-outlined {
+            font-size: 38px;
+            color: var(--pcolor);
+        }
+
+        .why-card h3 {
+            color: white;
+            font-size: 18px;
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ============ STATS / COUNTERS ============ */
+        .stats-section {
+            background: linear-gradient(125deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.75)),
+                url("./src/zcc.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .stats-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-box h2 {
+            color: var(--pcolor);
+            font-size: clamp(30px, 4vw, 46px);
+        }
+
+        .stat-box p {
+            color: white;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* ============ PROCESS / HOW WE WORK ============ */
+        .process-section {
+            background: white;
+        }
+
+        .process-wrap {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            position: relative;
+        }
+
+        .process-card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            transition: .6s ease;
+            background: #F7F7F7;
+            border-radius: 7px;
+            box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.253);
+        }
+
+        .process-card:hover {
+            transform: scale(1.05);
+            box-shadow: 1px 1px 10px gray;
+        }
+
+        .process-number {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--pcolor);
+            color: var(--pcolor);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .process-card h3 {
+            font-size: 18px;
+            color: #111;
+        }
+
+        .process-card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .story-wrap {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-      <header class="header">
+    <header class="header">
         <a href="index.html" class="companylogoa"><img src="./src/logo.webp" alt="Company Logo" class="companylogo"></a>
 
         <div class="menubar">
@@ -428,7 +443,7 @@
                 <li><a href="index.html" class="headlink">Home</a></li>
                 <li><a href="about.html" class="headlink active">About</a></li>
                 <li><a href="pages.html" class="headlink">Blog</a></li>
-                <li><a href="service.html" class="headlink">service</a></li>
+                <li><a href="service.html" class="headlink">Service</a></li>
                 <li><a href="contact.html" class="headlink">Contact</a></li>
             </ul>
 
@@ -496,12 +511,9 @@
     <section class="story-section">
         <div class="story-wrap reveal-left">
             <div class="story-images">
-                <img src="./src/a1.webp"
-                    alt="Warehouse shelves">
-                <img src="./src/a2.webp"
-                    alt="Warehouse worker">
-                <img src="./src/a3.webp"
-                    alt="Logistics team">
+                <img src="./src/a1.webp" alt="Warehouse shelves">
+                <img src="./src/a2.webp" alt="Warehouse worker">
+                <img src="./src/a3.webp" alt="Logistics team">
             </div>
 
             <div class="story-content reveal-right">
@@ -651,7 +663,7 @@
         </div>
     </section>
 
-     <footer class="footer reveal">
+    <footer class="footer reveal">
 
         <div class="footer-top">
             <div class="footer1 reveal-left">
@@ -680,7 +692,7 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="pages.html">Blog</a>
-                    <a href="service.html">service</a>
+                    <a href="service.html">Service</a>
                     <a href="contact.html">Contact</a>
                 </div>
 

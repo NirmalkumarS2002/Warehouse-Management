@@ -29,6 +29,12 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
         body {
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -313,6 +319,20 @@
             text-align: center;
             align-items: center;
             padding: 20px;
+            border: 1px solid rgba(128, 128, 128, 0.438);
+            border-radius: 7px;
+            transition: .7s ease;
+
+        }
+
+        .process-card:hover {
+            transform: scale(1.07);
+        }
+
+        .process-card:hover .process-number {
+            background: var(--pcolor);
+            color: black;
+            transform: rotate(720deg);
         }
 
         .process-number {
@@ -326,6 +346,7 @@
             justify-content: center;
             font-size: 20px;
             font-weight: 700;
+            transition: .6s ease;
         }
 
         .process-card h3 {
@@ -619,7 +640,7 @@
                 <li><a href="index.html" class="headlink">Home</a></li>
                 <li><a href="about.html" class="headlink">About</a></li>
                 <li><a href="pages.html" class="headlink">Blog</a></li>
-                <li><a href="service.html" class="headlink active">service</a></li>
+                <li><a href="service.html" class="headlink active">Service</a></li>
                 <li><a href="contact.html" class="headlink">Contact</a></li>
             </ul>
 
@@ -784,29 +805,30 @@
                 </div>
             </div>
 
-     <div class="service-card reveal delay-3">
-    <img src="./src/s7.webp" alt="Inventory Management">
-    <div class="service-card-body">
-        <div class="icon-box">
-            <span class="material-symbols-outlined">inventory_2</span>
-        </div>
-        <h3>Delivery</h3>
-        <p>Track stock levels in real time and maintain accurate inventory records across all storage locations.</p>
-        <a href="404.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-</div>
+            <div class="service-card reveal delay-3">
+                <img src="./src/s7.webp" alt="Inventory Management">
+                <div class="service-card-body">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">inventory_2</span>
+                    </div>
+                    <h3>Delivery</h3>
+                    <p>Track stock levels in real time and maintain accurate inventory records across all storage
+                        locations.</p>
+                    <a href="404.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
 
-<div class="service-card reveal delay-4">
-    <img src="./src/s8.webp" alt="Order Fulfillment">
-    <div class="service-card-body">
-        <div class="icon-box">
-            <span class="material-symbols-outlined">package_2</span>
-        </div>
-        <h3>Warehouse</h3>
-        <p>Efficient picking, packing, and shipping solutions to ensure fast and accurate deliveries.</p>
-        <a href="404.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-</div>
+            <div class="service-card reveal delay-4">
+                <img src="./src/s8.webp" alt="Order Fulfillment">
+                <div class="service-card-body">
+                    <div class="icon-box">
+                        <span class="material-symbols-outlined">package_2</span>
+                    </div>
+                    <h3>Warehouse</h3>
+                    <p>Efficient picking, packing, and shipping solutions to ensure fast and accurate deliveries.</p>
+                    <a href="404.html">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -878,8 +900,7 @@
             </div>
 
             <div class="benefits-image reveal-right">
-                <img src="./src/as.webp"
-                    alt="Warehouse benefits">
+                <img src="./src/as.webp" alt="Warehouse benefits">
             </div>
         </div>
     </section>
@@ -943,7 +964,7 @@
         </div>
     </section>
 
- <footer class="footer reveal">
+    <footer class="footer reveal">
 
         <div class="footer-top">
             <div class="footer1 reveal-left">
@@ -972,7 +993,7 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="pages.html">Blog</a>
-                    <a href="service.html">service</a>
+                    <a href="service.html">Service</a>
                     <a href="contact.html">Contact</a>
                 </div>
 
