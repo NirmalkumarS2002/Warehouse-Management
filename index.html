@@ -26,9 +26,33 @@
 </head>
 
 <style>
+
     :root {
         --pcolor: #FFB334;
         --scolor: white;
+        --ink: black;
+        --panel: black;
+        --panel2: black;
+        --line: #263241;
+        --yellow: #FFB334;
+        --orange: #FF5A2E;
+        --text: #ECEFF2;
+        --muted: #8FA0AC;
+        --display: 'Oswald', sans-serif;
+        --body: 'font-family: "Noto Sans", sans-serif';
+        --mono: 'font-family: "Noto Sans", sans-serif';
+    }
+
+    html{
+        scroll-behavior: smooth;
+          overflow-x: hidden;
+    }
+    body {
+        background: var(--ink);
+        color: var(--text);
+        font-family: "Noto Sans", sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
     }
 
     .hero-section {
@@ -59,11 +83,12 @@
         gap: 5px;
     }
 
-    .hero-text h6{
-        font-size:  clamp(15px, 1.7vw, 18px);
+    .hero-text h6 {
+        font-size: clamp(15px, 1.5vw, 16px);
         color: var(--pcolor);
-        letter-spacing: 2px;
         margin-bottom: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
     }
 
     .hero-text h1 {
@@ -75,7 +100,7 @@
     .hero-text p {
         color: gray;
         max-width: 600px;
-        font-size: clamp(15px, 1.7vw, 18px);
+        font-size: clamp(15px, 1.7vw, 17px);
         line-height: 1.7;
         margin-bottom: 20px;
     }
@@ -90,11 +115,12 @@
     .hero-main-btns button {
         padding: 15px 20px;
         border-radius: 7px;
-        font-size: clamp(15px, 1.5vw, 16px);
+        font-size: clamp(13px, 1.4vw, 14px);
         text-transform: capitalize;
         font-weight: 600;
         border: 1px solid var(--pcolor);
         min-width: 180px;
+        text-transform: uppercase;
 
     }
 
@@ -154,21 +180,22 @@
     }
 
     .w-service span {
-        font-size:  clamp(40px, 46vw, 60px);
+        font-size: clamp(40px, 46vw, 60px);
         margin-bottom: 7px;
         flex: 1;
         color: var(--pcolor);
     }
 
     .w-service h3 {
-        font-size:  clamp(18px, 1.9vw, 22px);;
+        font-size: clamp(18px, 1.9vw, 22px);
+        ;
         margin-bottom: 5px;
         color: white;
 
     }
 
     .w-service p {
-        font-size:  clamp(14px, 1.5vw, 16px);
+        font-size: clamp(14px, 1.5vw, 16px);
         text-align: center;
         flex: 1;
         color: gray;
@@ -196,26 +223,8 @@
 
     /*added sections*/
 
-    :root {
-        --ink: #0C1116;
-        --panel: #131A22;
-        --panel2: #17202A;
-        --line: #263241;
-        --yellow: #F4C10F;
-        --orange: #FF5A2E;
-        --text: #ECEFF2;
-        --muted: #8FA0AC;
-        --display: 'Oswald', sans-serif;
-        --body: 'Inter', sans-serif;
-        --mono: 'Roboto Mono', monospace;
-    }
 
-    body {
-        background: var(--ink);
-        color: var(--text);
-        font-family: "Noto Sans", sans-serif;
-        line-height: 1.6;
-    }
+
 
     img {
         display: block;
@@ -225,11 +234,10 @@
     .wrap {
         max-width: 1240px;
         margin: 0 auto;
-        padding: 0 30px;
+        padding: 0 15px;
     }
 
     .eyebrow {
-        font-family: var(--mono);
         font-size: 13px;
         letter-spacing: 3px;
         text-transform: uppercase;
@@ -300,7 +308,7 @@
     }
 
     .btn {
-        font-family: var(--mono);
+
         font-size: 14px;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -309,8 +317,9 @@
         text-decoration: none;
         display: inline-block;
         cursor: pointer;
-        border: 2px solid var(--yellow);
+        border: 1px solid var(--yellow);
         transition: .3s ease;
+        border-radius: 7px;
     }
 
     .btn-solid {
@@ -327,7 +336,7 @@
     .btn-ghost {
         background: transparent;
         color: var(--text);
-        border-color: var(--line);
+        border-color: var(--pcolor);
     }
 
     .btn-ghost:hover {
@@ -419,7 +428,7 @@
     /* ============ SECTION 3 — SERVICES ============ */
 
     .s3 {
-        background: white;
+        background: #F7F7F7;
         padding: 100px 0;
     }
 
@@ -436,7 +445,7 @@
     }
 
     .s3-head p {
-          color: black;
+        color: black;
     }
 
     .s3-grid {
@@ -446,8 +455,8 @@
     }
 
     .s-card {
-        background: var(--panel);
-        border: 1px solid var(--line);
+        background: white;
+
         border-radius: 6px;
         overflow: hidden;
         transition: .35s ease;
@@ -456,6 +465,7 @@
     .s-card:hover {
         transform: translateY(-6px);
         border-color: var(--yellow);
+        box-shadow: 1px 1px 15px gray;
     }
 
     .s-card img {
@@ -469,7 +479,7 @@
     }
 
     .s-tag {
-        font-family: var(--mono);
+
         font-size: 12px;
         color: var(--yellow);
         letter-spacing: 1px;
@@ -480,10 +490,11 @@
     .s-card h3 {
         font-size: 20px;
         margin-bottom: 10px;
+        color: black;
     }
 
     .s-card p {
-        color: var(--muted);
+        color: gray;
         font-size: 14.5px;
     }
 
@@ -635,7 +646,7 @@
     }
 
     .p-step p {
-          color: black;
+        color: black;
         font-size: 14px;
         max-width: 240px;
     }
@@ -711,7 +722,7 @@
 
     .s7 {
         padding: 100px 0;
-        background: white;
+        background: #F7F7F7;
     }
 
     .s7-head {
@@ -736,17 +747,26 @@
     }
 
     .t-card {
-        background: var(--panel);
-        border: 1px solid var(--line);
+        background: white;
         border-left: 3px solid var(--yellow);
         border-radius: 4px;
         padding: 28px;
+        transition: .6s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .t-card:hover {
+        box-shadow: 1px 1px 30px gray;
+        transform: translateY(-4px);
+
     }
 
     .t-card p {
-        color: var(--text);
+        color: black;
         font-size: 15px;
         margin-bottom: 22px;
+        flex: 1;
     }
 
     .t-who {
@@ -764,13 +784,14 @@
 
     .t-who b {
         display: block;
+        color: var(--pcolor);
         font-size: 14px;
     }
 
     .t-who span {
         font-family: var(--mono);
         font-size: 12px;
-        color: var(--muted);
+        color: gray;
     }
 
     /* ============ SECTION 8 — CTA ============ */
@@ -976,7 +997,7 @@
 
         </div>
 
-       
+
     </section>
 
     <!-- ============ SECTION 1 — HERO ============ -->
@@ -994,7 +1015,7 @@
             </div>
             <div class="s1-img">
                 <div class="frame"></div>
-                <img src="https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                <img src="./src/h11.webp"
                     alt="Warehouse storage racks with pallets">
                 <div class="s1-tag"><strong>99.4%</strong>Order Accuracy Rate</div>
             </div>
@@ -1025,7 +1046,7 @@
 
             <div class="s3-grid">
                 <div class="s-card">
-                    <img src="https://images.pexels.com/photos/5860937/pexels-photo-5860937.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h2.webp"
                         alt="Organized warehouse storage racks">
                     <div class="s-card-body">
                         <span class="s-tag">WH-01 / STORAGE</span>
@@ -1035,7 +1056,7 @@
                 </div>
 
                 <div class="s-card">
-                    <img src="https://images.pexels.com/photos/11666903/pexels-photo-11666903.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h3.webp"
                         alt="Forklift at warehouse loading dock">
                     <div class="s-card-body">
                         <span class="s-tag">WH-02 / DISPATCH</span>
@@ -1045,7 +1066,7 @@
                 </div>
 
                 <div class="s-card">
-                    <img src="https://images.pexels.com/photos/4487382/pexels-photo-4487382.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h4.webp"
                         alt="Worker operating pallet jack">
                     <div class="s-card-body">
                         <span class="s-tag">WH-03 / TRANSIT</span>
@@ -1061,7 +1082,7 @@
     <section class="s4">
         <div class="wrap">
             <div class="s4-img">
-                <img src="https://images.pexels.com/photos/36696522/pexels-photo-36696522.jpeg?auto=compress&cs=tinysrgb&w=900"
+                <img src="./src/h5.webp"
                     alt="Forklifts operating inside industrial warehouse">
             </div>
             <div class="s4-text">
@@ -1144,27 +1165,27 @@
 
             <div class="gallery">
                 <div class="g-item">
-                    <img src="https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg?auto=compress&cs=tinysrgb&w=900"
+                    <img src="./src/h6.webp"
                         alt="Stacked boxes in warehouse">
                     <div class="g-cap">Bulk Storage Bay</div>
                 </div>
                 <div class="g-item">
-                    <img src="https://images.pexels.com/photos/7019213/pexels-photo-7019213.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h7.webp"
                         alt="Worker sorting items on shelves">
                     <div class="g-cap">Sorting Line</div>
                 </div>
                 <div class="g-item">
-                    <img src="https://images.pexels.com/photos/30824313/pexels-photo-30824313.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h8.webp"
                         alt="Warehouse employees with forklift">
                     <div class="g-cap">Floor Crew</div>
                 </div>
                 <div class="g-item">
-                    <img src="https://images.pexels.com/photos/14554082/pexels-photo-14554082.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h9.webp"
                         alt="Warehouse aisle with metal shelving">
                     <div class="g-cap">Aisle Racking</div>
                 </div>
                 <div class="g-item">
-                    <img src="https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=700"
+                    <img src="./src/h10.webp"
                         alt="Wide angle of warehouse with stocked shelves">
                     <div class="g-cap">Main Floor</div>
                 </div>
@@ -1185,7 +1206,7 @@
                     <p>"Stock counts finally match what's actually on the shelf. That alone saved us hours every week."
                     </p>
                     <div class="t-who">
-                        <img src="https://images.pexels.com/photos/4483775/pexels-photo-4483775.jpeg?auto=compress&cs=tinysrgb&w=100"
+                        <img src="./src/person1.webp"
                             alt="Warehouse manager portrait">
                         <div><b>R. Menon</b><span>Ops Manager, Retail Client</span></div>
                     </div>
@@ -1194,16 +1215,16 @@
                 <div class="t-card">
                     <p>"Dispatch times dropped by almost a third after they restructured our pick routes."</p>
                     <div class="t-who">
-                        <img src="https://images.pexels.com/photos/4487365/pexels-photo-4487365.jpeg?auto=compress&cs=tinysrgb&w=100"
+                        <img src="./src/person2.webp"
                             alt="Logistics coordinator portrait">
-                        <div><b>S. Krishnan</b><span>Logistics Lead, FMCG Brand</span></div>
+                        <div><b>S. Krishna</b><span>Logistics Lead, FMCG Brand</span></div>
                     </div>
                 </div>
 
                 <div class="t-card">
                     <p>"Damage claims are down every quarter since we moved storage over to their facility."</p>
                     <div class="t-who">
-                        <img src="https://images.pexels.com/photos/30341205/pexels-photo-30341205.jpeg?auto=compress&cs=tinysrgb&w=100"
+                        <img src="./src/person3.webp"
                             alt="Supply chain lead portrait">
                         <div><b>A. Fernandes</b><span>Supply Chain Head, D2C Brand</span></div>
                     </div>
