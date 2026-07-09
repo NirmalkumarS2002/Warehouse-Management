@@ -41,12 +41,12 @@
 
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: space-around;
         gap: 20px;
-        justify-content: center;
+        justify-content: space-around;
 
         position: relative;
-        padding: 80px 15px;
+        padding: 50px 15px;
         font-family: "Noto Sans", sans-serif;
     }
 
@@ -59,15 +59,21 @@
         gap: 5px;
     }
 
-    .hero-text h1 {
+    .hero-text h6{
+        font-size:  clamp(15px, 1.7vw, 18px);
         color: var(--pcolor);
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .hero-text h1 {
         max-width: 750px;
         font-size: clamp(25px, 3vw, 45px);
         margin-bottom: 10px;
     }
 
     .hero-text p {
-        color: white;
+        color: gray;
         max-width: 600px;
         font-size: clamp(15px, 1.7vw, 18px);
         line-height: 1.7;
@@ -129,10 +135,11 @@
     }
 
     .whouse-services {
-        display: none;
+        display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 15px;
+
     }
 
     .w-service {
@@ -140,7 +147,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: white;
         border-radius: 7px;
         padding: 10px;
         min-width: 250px;
@@ -148,45 +154,30 @@
     }
 
     .w-service span {
-        font-size: 60px;
-        margin-bottom: 5px;
+        font-size:  clamp(40px, 46vw, 60px);
+        margin-bottom: 7px;
         flex: 1;
+        color: var(--pcolor);
     }
 
     .w-service h3 {
-        font-size: 22px;
+        font-size:  clamp(18px, 1.9vw, 22px);;
         margin-bottom: 5px;
+        color: white;
+
     }
 
     .w-service p {
-        font-size: 16px;
+        font-size:  clamp(14px, 1.5vw, 16px);
         text-align: center;
         flex: 1;
+        color: gray;
     }
 
     .abt {
         height: 100vh;
     }
 
-    .fixed-btn {
-        position: absolute;
-        bottom: 40px;
-        right: 40px;
-    }
-
-    .fixed-btn button {
-        padding: 10px;
-        height: clamp(40px, 4.5vw, 50px);
-        width: clamp(40px, 4.5vw, 50px);
-        background: var(--pcolor);
-        border-radius: 7px;
-        border: none;
-    }
-
-    .fixed-btn button span {
-        font-size: clamp(20px, 2.3vw, 25px);
-        font-weight: bold;
-    }
 
     @media (max-width:500px) {
         .hero-main-btns {
@@ -935,7 +926,12 @@
 
     <section class="hero-section">
 
+        <div>
+
+        </div>
+
         <div class="hero-text">
+            <h6>Warehouse Management</h6>
             <h1>Elevate Your Operations With our Warehoue Solutions</h1>
             <p> Unlocking Effciency, Safety, and Reliability Experiences
                 seamless operations with our comprehensive wharehouse management your Trusted partner in material
@@ -980,11 +976,7 @@
 
         </div>
 
-        <div class="fixed-btn">
-            <button><span class="material-symbols-outlined">
-                    arrow_warm_up
-                </span></button>
-        </div>
+       
     </section>
 
     <!-- ============ SECTION 1 — HERO ============ -->
