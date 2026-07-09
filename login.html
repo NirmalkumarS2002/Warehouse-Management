@@ -209,6 +209,7 @@
             font-size: 20px;
             transform: translateY(-50%);
             color: var(--pcolor);
+            cursor: pointer;
         }
 
         .forget {
@@ -387,7 +388,7 @@
 
                 <div class="inputbox">
 
-               
+
 
                     <div class="custom-select">
                         <div class="select-btn">
@@ -398,12 +399,12 @@
 
                         <div class="select-options">
                             <div class="option" data-value="Admin">
-                               
+
                                 Admin
                             </div>
 
                             <div class="option" data-value="Client">
-                                
+
                                 Client
                             </div>
                         </div>
@@ -515,12 +516,17 @@
 
         passeye.addEventListener("click", () => {
             if (passeye.textContent == "visibility_off") {
-
+                passeye.textContent = "visibility"
+                password.type = "text"
+            }
+            else {
+                passeye.textContent = "visibility_off"
+                password.type = "password"
             }
 
         })
 
-        //
+        // custom dropdown
 
         const selectBtn = document.querySelector(".select-btn");
         const options = document.querySelector(".select-options");

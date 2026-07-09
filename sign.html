@@ -311,7 +311,7 @@
             <form class="formbox">
 
                 <div class="inputbox">
-                    
+
                     <div class="custom-select">
                         <div class="select-btn">
                             <span class="material-symbols-outlined">person</span>
@@ -342,7 +342,7 @@
 
                 <div class="inputbox">
                     <span class="material-symbols-outlined ic1">call</span>
-                    <input type="tel" placeholder="Enter Your Number" id="number">
+                    <input type="tel" placeholder="Enter Your Number" id="number" maxlength="10">
                 </div>
 
                 <div class="inputbox">
@@ -353,17 +353,17 @@
                 <div class="inputbox">
                     <span class="material-symbols-outlined ic2">lock</span>
                     <input type="password" placeholder="Enter Your Password" id="password">
-                    <span class="material-symbols-outlined ic3">visibility</span>
+                    <span class="material-symbols-outlined ic3">visibility_off</span>
                 </div>
 
                 <div class="inputbox">
                     <span class="material-symbols-outlined ic2">lock</span>
                     <input type="password" placeholder="Enter Your Confirm Password" id="password1">
-                    <span class="material-symbols-outlined ic3">visibility</span>
+                    <span class="material-symbols-outlined ic3">visibility_off</span>
                 </div>
 
                 <div class="sbtn">
-                    <button class="submitbtn">submit</button>
+                    <button type="submit" class="submitbtn">submit</button>
                 </div>
 
             </form>
@@ -381,7 +381,7 @@
     </section>
 
     <script>
-
+        //custom dropdown
         const selectBtn = document.querySelector(".select-btn");
         const options = document.querySelector(".select-options");
         const selectedText = document.querySelector(".selected-text");
@@ -409,7 +409,107 @@
                 options.classList.remove("show");
                 selectBtn.classList.remove("active");
             }
-        }); 
+        });
+
+        // form validation
+
+        const formbox = document.querySelector(".formbox")
+        const role = document.querySelector("#role")
+        const name = document.querySelector("#name")
+        const number = document.querySelector("#number")
+        const email = document.querySelector("#email")
+        const password = document.querySelector("#password")
+        const conpassowrd = document.querySelector("#password1")
+
+        name.addEventListener("input", () => {
+            name.value = name.value.replace(/[^A-Za-z\s]/g, "")
+        })
+
+        number.addEventListener("input", () => {
+            number.value = number.value.replace(/[^0-9]/g, "")
+        })
+
+        formbox.addEventListener("submit", (e) => {
+            e.preventDefault()
+
+            let emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+            if (role.value.trim() == "") {
+                alert("Plase Select Your Role")
+                role.focus();
+                return;
+            }
+
+            if (name.value.trim() == "") {
+                alert("please Enter Your Name")
+                name.focus();
+                return;
+            }
+
+            if (number.value.trim() == "") {
+                alert("Please Enter Your Number")
+                number.focus();
+                return;
+            }
+
+            if (email.value.trim() == "") {
+                alert("Please Enter Your Email")
+                email.focus();
+                return;
+            }
+
+            if (!emailregex.test(email.value.trim())) {
+                alert("please Enter Valid Email")
+                email.focus()
+                return;
+            }
+
+            if (password.value.trim() == "") {
+                alert("Enter Your Password")
+                password.focus()
+                return;
+            }
+
+            if (password.value.length < 6) {
+                alert("password Must be in 6 chars")
+                password.focus();
+                return;
+            }
+
+            if (conpassowrd.value.trim() == "") {
+                alert("Please enter your confirm Password")
+                conpassowrd.focus();
+                return;
+            }
+
+            if (conpassowrd.value.trim() !== password.value.trim()) {
+                alert("password and confirm password must be same")
+                conpassowrd.focus();
+                return;
+            }
+
+            alert("Account Created Successfully!")
+            window.location.href = "login.html"
+        })
+
+        //pass eye
+
+        const pass1 = document.querySelectorAll(".ic3")
+        pass1.forEach((pass) => {
+            pass.addEventListener("click", () => {
+                const input = pass.previousElementSibling;
+
+                if (input.type === "password") {
+                    input.type = "text";
+                    pass.textContent = "visibility";
+                } else {
+                    input.type = "password";
+                    pass.textContent = "visibility_off";
+                }
+            });
+        })
+
+
     </script>
 </body>
 
