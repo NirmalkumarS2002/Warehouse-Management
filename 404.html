@@ -91,7 +91,7 @@
         border-radius: 7px;
         min-width: 150px;
         font-weight: bolder;
-        color: white;
+    
         cursor: pointer;
         transition: all 0.4s ease;
     }
@@ -99,6 +99,7 @@
     .btn1 {
         background: var(--pcolor);
         border: none;
+        color: black;
     }
 
     .btn1:hover {
@@ -111,6 +112,7 @@
     .btn2 {
         background: transparent;
         border: 1px solid var(--pcolor);
+            color: white;
     }
 
     .btn2:hover {
@@ -161,6 +163,18 @@
             <button class="btn2"><span class="material-symbols-outlined">arrow_back</span>Go Back</button>
         </div>
     </div>
+
+    <script>
+        const btn1 = document.querySelector(".btn1")
+        btn1.addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+
+        const btn2 = document.querySelector(".btn2")
+        btn2.addEventListener("click", () => {
+                history.back();
+        })
+    </script>
 </body>
 
 </html>

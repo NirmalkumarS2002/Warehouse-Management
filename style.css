@@ -9,6 +9,9 @@
 body {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 :root {
@@ -289,28 +292,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-     font-family: "Noto Sans", sans-serif;
+    font-family: "Noto Sans", sans-serif;
 }
 
-.footer::before{
+.footer::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        123deg,
-        rgba(0, 0, 0, 0.829),
-        rgba(0,0,0,0.829)
-    ),
-    url("./src/404.webp");
+    background: linear-gradient(123deg,
+            rgba(0, 0, 0, 0.829),
+            rgba(0, 0, 0, 0.829)),
+        url("./src/404.webp");
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     filter: blur(5px);
-    transform: scale(1.1); /* avoid blur edges */
+    transform: scale(1.1);
+    /* avoid blur edges */
     z-index: -1;
 }
+
 .footer-logo {
     width: 160px;
     margin-bottom: 15px;
@@ -536,3 +539,54 @@ body {
         justify-content: center;
     }
 }
+
+/* reaveal animation */
+
+.reveal,
+.reveal-right,
+.reveal-left {
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.reveal {
+    transform: translateY(60px);
+
+}
+
+.reveal-right {
+    transform: translateX(60px);
+}
+
+.reveal-left {
+    transform: translateX(-60px);
+}
+
+.delay-1 {
+    transition-delay: .2s;
+}
+
+.delay-2 {
+    transition-delay: .4s;
+}
+
+.delay-3 {
+    transition-delay: .6s;
+}
+
+.delay-4 {
+    transition-delay: .8s;
+}
+
+.delay-5 {
+    transition-delay: 1s;
+}
+
+
+.reveal.showed,
+.reveal-left.showed,
+.reveal-right.showed {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+

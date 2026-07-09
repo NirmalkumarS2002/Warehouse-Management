@@ -649,7 +649,7 @@
         </div>
     </header>
 
-  <section class="blog-banner">
+  <section class="blog-banner reveal">
         <span>Our Blog</span>
         <h1>Insights On Warehouse And Supply Chain Management</h1>
         <p>Tips, trends, and updates from our team to help you run a smarter and more efficient
@@ -662,14 +662,14 @@
     </section>
  
     <!-- ================= 1. FEATURED POST ================= -->
-    <section class="featured-section">
+    <section class="featured-section reveal">
         <div class="featured-wrap">
-            <div class="featured-image">
+            <div class="featured-image reveal-left">
                 <img src="./src/b8.webp"
                     alt="Featured blog post">
             </div>
  
-            <div class="featured-content">
+            <div class="featured-content reveal-right">
                 <span class="post-tag">Featured</span>
                 <div class="post-meta">
                     <span><i class="fa-regular fa-calendar"></i>June 12, 2026</span>
@@ -686,7 +686,7 @@
     </section>
  
     <!-- ================= 2. BLOG GRID ================= -->
-    <section class="blog-grid-section">
+    <section class="blog-grid-section reveal">
         <div class="section-head">
             <span>Latest Articles</span>
             <h2>Recent Blog Posts</h2>
@@ -694,7 +694,7 @@
         </div>
  
         <div class="blog-grid-wrap">
-            <div class="blog-card">
+            <div class="blog-card reveal delay-1">
                                 <img src="./src/b2.webp"
                     alt="Warehouse safety">
                 <div class="blog-card-body">
@@ -705,7 +705,7 @@
                 </div>
             </div>
  
-            <div class="blog-card">
+            <div class="blog-card reveal delay-2">
                 <img src="./src/b1.webp"
                     alt="Distribution trends">
                 <div class="blog-card-body">
@@ -717,7 +717,7 @@
             </div>
             
  
-            <div class="blog-card">
+            <div class="blog-card reveal delay-3">
                                 <img src="./src/b4.webp"
                     alt="Packaging tips">
                 <div class="blog-card-body">
@@ -730,7 +730,7 @@
  
       
  
-            <div class="blog-card">
+            <div class="blog-card reveal delay-4">
                   <img src="./src/b6.webp"
                     alt="Order fulfillment">
                 <div class="blog-card-body">
@@ -746,7 +746,7 @@
     </section>
  
     <!-- ================= 3. CATEGORIES ================= -->
-    <section class="category-section">
+    <section class="category-section reveal">
         <div class="section-head">
             <span>Browse Topics</span>
             <h2>Explore By Category</h2>
@@ -787,7 +787,7 @@
     </section>
  
     <!-- ================= 4. POPULAR POSTS ================= -->
-    <section class="popular-section">
+    <section class="popular-section reveal">
         <div class="section-head">
             <span>Trending Now</span>
             <h2>Popular Posts This Month</h2>
@@ -795,7 +795,7 @@
         </div>
  
         <div class="popular-wrap">
-            <div class="popular-item">
+            <div class="popular-item reveal-left">
                               <img src="./src/b5.webp"
                     alt="Popular post 1">
                 <div class="popular-item-content">
@@ -805,7 +805,7 @@
                 </div>
             </div>
  
-            <div class="popular-item">
+            <div class="popular-item reveal-right">
                 <img src="./src/h6.webp"
                     alt="Popular post 2">
                 <div class="popular-item-content">
@@ -815,7 +815,7 @@
                 </div>
             </div>
  
-            <div class="popular-item">
+            <div class="popular-item reveal-left">
                                <img src="./src/a3.webp"
                     alt="Popular post 3">
                 <div class="popular-item-content">
@@ -828,26 +828,26 @@
     </section>
  
     <!-- ================= 5. NEWSLETTER ================= -->
-    <section class="newsletter-section">
+    <section class="newsletter-section reveal">
         <span>Stay Updated</span>
         <h2>Subscribe To Our Newsletter</h2>
         <p>Get the latest warehouse management tips and industry insights delivered straight to your
             inbox.</p>
         <div class="newsletter-form">
-            <input type="email" placeholder="Enter your email">
-            <button>Subscribe</button>
+            <input type="email" placeholder="Enter your email" id="subemail">
+            <button class="subtn">Subscribe</button>
         </div>
     </section>
  
     <!-- ================= 6. AUTHOR SPOTLIGHT ================= -->
-    <section class="author-section">
+    <section class="author-section reveal">
         <div class="author-wrap">
-            <div class="author-image">
+            <div class="author-image reveal-left">
          <img src="./src/b7.webp"
                     alt="Author">
             </div>
  
-            <div class="author-content">
+            <div class="author-content reveal-right">
                 <span>Written By</span>
                 <h3>Warehouse Editorial Team</h3>
                 <p>Our editorial team shares practical insights from years of hands-on experience in
@@ -864,10 +864,10 @@
         </div>
     </section>
 
-    <section class="footer">
+<footer class="footer reveal">
 
         <div class="footer-top">
-            <div class="footer1">
+            <div class="footer1 reveal-left">
 
                 <a href="index.html"> <img src="./src/logo.webp" alt="company Logo" class="footer-logo"></a>
                 <p>Streamline inventory, storage, and distribution with smart
@@ -886,7 +886,7 @@
                 </div>
             </div>
 
-            <div class="footer2">
+            <div class="footer2 reveal-left">
                 <h2>Company</h2>
 
                 <div class="footer-links">
@@ -899,7 +899,7 @@
 
             </div>
 
-            <div class="footer2">
+            <div class="footer2 reveal-right">
                 <h2>Services</h2>
 
                 <div class="footer-links">
@@ -911,7 +911,7 @@
                 </div>
             </div>
 
-            <div class="footer2 f-contects">
+            <div class="footer2 f-contects reveal-right">
                 <h2>Location</h2>
 
                 <div class="footer-links">
@@ -924,17 +924,18 @@
         </div>
 
         <div class="footer-bottom">
-            <p>@Copyright 2026 Created by Stackly</p>
-            <div>
+            <p class="reveal-left">@Copyright 2026 Created by Stackly</p>
+            <div class="reveal-right">
                 <a href="404.html">Terms and conditions</a>
                 <a href="404.html">Privacy Policy</a>
             </div>
         </div>
 
-    </section>
+    </footer>
 
 
     <script src="script.js"></script>
+    <script src="pages.js"></script>
 </body>
 
 </html>
